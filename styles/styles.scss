@@ -94,13 +94,44 @@
 .filter-archive-circle {
 }
 
+/* Zoom Transform Origins */ 
+.migrate-zoom {
+    transform-origin: 0% 0%;
+}
+.starters-zoom {
+    transform-origin: 0 13%;
+}
+.leavers-zoom {
+    transform-origin: 0 80%;
+}
+.archive-zoom {
+    transform-origin: 0 100%;
+}
+.movers-zoom {
+    transform-origin: 25% 45%;
+}
+.joiners-zoom {
+    transform-origin: 62% 0;
+}
+.automate-zoom {
+    transform-origin: 100% 45%;
+}
+
 * {
     font-family: Arial, Helvetica, sans-serif;
-  }
+}
 
-.svg-container {
+#animation-widget {
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
     max-width: 1920px;
     max-height: 1080px;
+}
+
+.zoom {
+    transform: scale(2.5);
 }
   
 .outer-circle-title {
@@ -114,8 +145,7 @@
   
 .text-link {
     font-size: 20px;
-    // font-weight: bold;
-    // opacity: 0;
+    opacity: 0;
 }
   
 .hidden {

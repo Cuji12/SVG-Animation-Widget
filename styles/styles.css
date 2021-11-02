@@ -35,13 +35,56 @@
           filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
 }
 
+/* Zoom Transform Origins */
+.migrate-zoom {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+.starters-zoom {
+  -webkit-transform-origin: 0 13%;
+          transform-origin: 0 13%;
+}
+
+.leavers-zoom {
+  -webkit-transform-origin: 0 80%;
+          transform-origin: 0 80%;
+}
+
+.archive-zoom {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+.movers-zoom {
+  -webkit-transform-origin: 25% 45%;
+          transform-origin: 25% 45%;
+}
+
+.joiners-zoom {
+  -webkit-transform-origin: 62% 0;
+          transform-origin: 62% 0;
+}
+
+.automate-zoom {
+  -webkit-transform-origin: 100% 45%;
+          transform-origin: 100% 45%;
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.svg-container {
+#animation-widget {
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
   max-width: 1920px;
   max-height: 1080px;
+}
+
+.zoom {
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
 }
 
 .outer-circle-title {
@@ -55,6 +98,7 @@
 
 .text-link {
   font-size: 20px;
+  opacity: 0;
 }
 
 .hidden {
