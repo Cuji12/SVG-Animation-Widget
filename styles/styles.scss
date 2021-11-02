@@ -1,0 +1,121 @@
+/* Fills, these are used for everything other than images. */
+:root {
+    /* Base colours */
+    --color-white: #FFFFFF;
+    /* Inner circle */
+    --color-inner-circle: #E2E2E2;
+    --color-vendor-lockin: #ED730D;
+    /* Outer circle */
+    --color-outer-circle: #ffffff;
+    --color-outer-circle-stroke: #939393;
+    --color-outer-circle-link: #555555;
+    /* Joiners branch */
+    --color-migrate-title: #128CF2;
+    --color-starters-title: #FABD14;
+    --color-migrate-link: #555555;
+    --color-starters-link: #555555;
+    /* Movers branch */
+    --color-leavers-title: #E30817;
+    --color-archive-title: #555555;
+    --color-leavers-link: #555555;
+    --color-archive-link: #555555;
+}
+
+/* Filter Mixins */
+@mixin orange-ED730D {
+    -webkit: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
+    filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
+}
+  
+/* Filters, these are used only for images. */
+// Inner circle
+.filter-google-logo {
+
+}
+.filter-inner-circle-arrow {
+
+}
+.filter-microsoft365-logo {
+
+}
+
+// Outer circle
+.filter-joiners-circle {
+
+}
+.filter-movers-circle {
+
+}
+.filter-automate-circle {
+
+}
+// Joiners branch
+.filter-joiners-branch {
+
+}
+.filter-joiners-arrow {
+
+}
+.filter-migrate-arrow {
+
+}
+.filter-starters-arrow {
+
+}
+.filter-migrate-circle {
+    
+}
+.filter-starters-circle {
+    @include orange-ED730D;
+}
+
+// Movers branch
+.filter-movers-branch {
+
+}
+.filter-movers-arrow {
+
+}
+.filter-leavers-arrow {
+
+}
+.filter-archive-arrow {
+
+}
+.filter-leavers-circle {
+    
+}
+.filter-archive-circle {
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.svg-container {
+    max-width: 1920px;
+    max-height: 1080px;
+}
+  
+.outer-circle-title {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+  
+.clickable {
+    cursor: pointer;
+}
+  
+.text-link {
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0;
+}
+  
+.hidden {
+    display: none;
+}
+
+.unhide {
+    display: block;
+}
