@@ -40,32 +40,60 @@ const targetBehaviour = '_blank'
 // 'archive-circle-link','archive-link-1','archive-link-2']
 
 const linkIds = {
-    'google-link': googleLink,'microsoft365-link': microsoft365Link,'inner-circle-text-link':innerCircleTextLink,'joiners-link1': joinersLink1,'joiners-link2': joinersLink2,
-    'joiners-link3': joinersLink3,'movers-link1': moversLink1,'automate-link1': automateLink1,'migrate-circle-link': migrateCircleLink,'migrate-link1': migrateLink1,
-    'migrate-link2': migrateLink2,'migrate-link-3': migrateLink3,'starters-circle-link': startersCircleLink,'starters-link1': startersLink1,'starters-link2': startersLink2,
-    'starters-link3': startersLink3,'leavers-circle-link': leaversCircleLink,'leavers-link1': leaversLink1,'leavers-link2': leaversLink2,'archive-circle-link': archiveCircleLink,
-    'archive-link1': archiveLink1,'archive-link2': archiveLink2
+    'google-link': googleLink,'microsoft365-link': microsoft365Link,'inner-circle-text-link':innerCircleTextLink,'joiners-text-link1': joinersLink1,'joiners-text-link2': joinersLink2,
+    'joiners-text-link3': joinersLink3,'movers-text-link1': moversLink1,'automate-text-link1': automateLink1,'migrate-circle-link': migrateCircleLink,'migrate-text-link1': migrateLink1,
+    'migrate-text-link2': migrateLink2,'migrate-text-link3': migrateLink3,'starters-circle-link': startersCircleLink,'starters-text-link1': startersLink1,'starters-text-link2': startersLink2,
+    'starters-text-link3': startersLink3,'leavers-circle-link': leaversCircleLink,'leavers-text-link1': leaversLink1,'leavers-text-link2': leaversLink2,'archive-circle-link': archiveCircleLink,
+    'archive-text-link1': archiveLink1,'archive-text-link2': archiveLink2
 }
 
 // Implement object that consists of key-val pairs for different zoom origins.
 
 window.onload = (event) => {
-    // Load in the links once all resources on page have loaded.
-    // for (var key in linkIds) {
-    //     document.getElementById(key).setAttribute('href', linkIds[key])
-    //     document.getElementById(key).setAttribute('target', targetBehaviour)
-    // }
-    
     var zoomElements = document.getElementsByClassName('zoom-anchor')
+    var backButtonElements = document.getElementsByClassName('back-button')
+    var svgContainer = document.getElementById('animation-widget')
     
+    // Load in the links once all resources on page have loaded.
+    for (var key in linkIds) {
+        document.getElementById(key).setAttribute('href', linkIds[key])
+        document.getElementById(key).setAttribute('target', targetBehaviour)
+    }
+ 
+    // Add event listeners to the images for each zoom section.
     for (var i = 0; i < zoomElements.length; i++) {
         zoomElements[i].addEventListener('click', function (e) {
             e.preventDefault()
-            var svgContainer = document.getElementById('animation-widget')
             var zoomOrigin = this.getAttribute('data-zoom-origin')
+            var zoomSection = this.getAttribute('data-section')
+            var sections = document.getElementsByClassName('section')
 
             svgContainer.classList.add(zoomOrigin)
+            svgContainer.setAttribute('data-zoom-origin', zoomOrigin)
             svgContainer.classList.add('zoom')
+            // Blur and grayscale all other than the zoomed in area.
+            // this.parentElement.parentElement
+            // document.getElementById('starters-circle').style.filter = "blur(5px) grayscale(100%)"
+
+            for (var i = 0; i < sections.length; i++) {
+                if(sections[i].getAttribute('data-section') !== zoomSection) {
+                    sections[i].style.filter = "blur(5px) grayscale(100%)"
+                }
+            }
         })
     }
+
+    // Add event listeners to back buttons.
+    for (var i = 0; i < backButtonElements.length; i++) {
+        backButtonElements[i].addEventListener('click', function () {
+            // Data attribute has same name as the class for setting transform-origin, use this to target and remove the class on our SVG.
+            var zoomOrigin = svgContainer.getAttribute('data-zoom-origin')
+            svgContainer.classList.remove(zoomOrigin)
+            svgContainer.classList.remove('zoom')
+        })
+    }
+
+
+
+
 }

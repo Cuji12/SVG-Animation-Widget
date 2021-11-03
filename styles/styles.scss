@@ -158,8 +158,14 @@
     transition: 1s ease-in-out;
     max-width: 1920px;
     max-height: 1080px;
-    overflow-x:hidden;
-    overflow-y:hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#animation-widget image, text {
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
 .zoom {
     transform: scale(2.5);
@@ -184,4 +190,5 @@
 }
 .back-button {
     opacity: 0;
+    transform-origin: 50% 50%;
 }

@@ -30,8 +30,8 @@
 /* Filter Mixins */
 /* Filters, these are used only for images. */
 .outer-circle-back-button {
-  -webkit-filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
-  filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
+  -webkit-filter: invert(50%) sepia(68%) saturate(1424%) hue-rotate(353deg) brightness(93%) contrast(100%);
+  filter: invert(50%) sepia(68%) saturate(1424%) hue-rotate(353deg) brightness(93%) contrast(100%);
 }
 
 .migrate-back-button {
@@ -102,6 +102,11 @@
   overflow-y: hidden;
 }
 
+#animation-widget image, text {
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
 .zoom {
   -webkit-transform: scale(2.5);
           transform: scale(2.5);
@@ -132,4 +137,6 @@
 
 .back-button {
   opacity: 0;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 }
