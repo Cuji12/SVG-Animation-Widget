@@ -29,16 +29,34 @@
 
 /* Filter Mixins */
 /* Filters, these are used only for images. */
-.filter-starters-circle {
-  -webkit: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
+.outer-circle-back-button {
   -webkit-filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
-          filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
+  filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
 }
 
-/* Zoom Transform Origins */
+.migrate-back-button {
+  -webkit-filter: invert(40%) sepia(66%) saturate(1425%) hue-rotate(183deg) brightness(97%) contrast(96%);
+  filter: invert(40%) sepia(66%) saturate(1425%) hue-rotate(183deg) brightness(97%) contrast(96%);
+}
+
+.starters-back-button {
+  -webkit-filter: invert(84%) sepia(9%) saturate(6164%) hue-rotate(348deg) brightness(101%) contrast(96%);
+  filter: invert(84%) sepia(9%) saturate(6164%) hue-rotate(348deg) brightness(101%) contrast(96%);
+}
+
+.leavers-back-button {
+  -webkit-filter: invert(11%) sepia(96%) saturate(6802%) hue-rotate(353deg) brightness(90%) contrast(98%);
+  filter: invert(11%) sepia(96%) saturate(6802%) hue-rotate(353deg) brightness(90%) contrast(98%);
+}
+
+.archive-back-button {
+  -webkit-filter: invert(29%) sepia(4%) saturate(15%) hue-rotate(327deg) brightness(103%) contrast(83%);
+  filter: invert(29%) sepia(4%) saturate(15%) hue-rotate(327deg) brightness(103%) contrast(83%);
+}
+
 .migrate-zoom {
-  -webkit-transform-origin: 0% 0%;
-          transform-origin: 0% 0%;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
 }
 
 .starters-zoom {
@@ -47,8 +65,8 @@
 }
 
 .leavers-zoom {
-  -webkit-transform-origin: 0 80%;
-          transform-origin: 0 80%;
+  -webkit-transform-origin: 0 75%;
+          transform-origin: 0 75%;
 }
 
 .archive-zoom {
@@ -57,18 +75,18 @@
 }
 
 .movers-zoom {
-  -webkit-transform-origin: 25% 45%;
-          transform-origin: 25% 45%;
+  -webkit-transform-origin: 40% 50%;
+          transform-origin: 40% 50%;
 }
 
 .joiners-zoom {
-  -webkit-transform-origin: 62% 0;
-          transform-origin: 62% 0;
+  -webkit-transform-origin: 63% 0%;
+          transform-origin: 63% 0%;
 }
 
 .automate-zoom {
-  -webkit-transform-origin: 100% 45%;
-          transform-origin: 100% 45%;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
 }
 
 * {
@@ -80,11 +98,14 @@
   transition: 1s ease-in-out;
   max-width: 1920px;
   max-height: 1080px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .zoom {
   -webkit-transform: scale(2.5);
           transform: scale(2.5);
+  transform-box: fill-box;
 }
 
 .outer-circle-title {
@@ -107,4 +128,8 @@
 
 .unhide {
   display: block;
+}
+
+.back-button {
+  opacity: 0;
 }

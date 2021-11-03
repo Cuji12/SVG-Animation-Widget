@@ -29,11 +29,43 @@
 
 /* Filter Mixins */
 @mixin orange-ED730D {
-    -webkit: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
-    filter: invert(59%) sepia(35%) saturate(7157%) hue-rotate(0deg) brightness(99%) contrast(91%);
+    -webkit-filter: invert(50%) sepia(68%) saturate(1424%) hue-rotate(353deg) brightness(93%) contrast(100%);
+    filter: invert(50%) sepia(68%) saturate(1424%) hue-rotate(353deg) brightness(93%) contrast(100%);
+}
+@mixin blue-128CF2 {
+    -webkit-filter: invert(40%) sepia(66%) saturate(1425%) hue-rotate(183deg) brightness(97%) contrast(96%);
+    filter: invert(40%) sepia(66%) saturate(1425%) hue-rotate(183deg) brightness(97%) contrast(96%);
+}
+@mixin yellow-FABD14 {
+    -webkit-filter: invert(84%) sepia(9%) saturate(6164%) hue-rotate(348deg) brightness(101%) contrast(96%);
+    filter: invert(84%) sepia(9%) saturate(6164%) hue-rotate(348deg) brightness(101%) contrast(96%);
+}
+@mixin red-E30817 {
+    -webkit-filter: invert(11%) sepia(96%) saturate(6802%) hue-rotate(353deg) brightness(90%) contrast(98%);
+    filter: invert(11%) sepia(96%) saturate(6802%) hue-rotate(353deg) brightness(90%) contrast(98%);
+}
+@mixin grey-555555 {
+    -webkit-filter: invert(29%) sepia(4%) saturate(15%) hue-rotate(327deg) brightness(103%) contrast(83%);
+    filter: invert(29%) sepia(4%) saturate(15%) hue-rotate(327deg) brightness(103%) contrast(83%);
 }
   
 /* Filters, these are used only for images. */
+// Back buttons
+.outer-circle-back-button {
+    @include orange-ED730D;
+}
+.migrate-back-button {
+    @include blue-128CF2;
+}
+.starters-back-button {
+    @include yellow-FABD14;
+}
+.leavers-back-button {
+    @include red-E30817;
+}
+.archive-back-button {
+    @include grey-555555;
+}
 // Inner circle
 .filter-google-logo {
 
@@ -72,14 +104,13 @@
     
 }
 .filter-starters-circle {
-    @include orange-ED730D;
 }
 
 // Movers branch
 .filter-movers-branch {
 
 }
-.filter-movers-arrow {
+.filter-grey-leaving-arrow {
 
 }
 .filter-leavers-arrow {
@@ -94,27 +125,26 @@
 .filter-archive-circle {
 }
 
-/* Zoom Transform Origins */ 
 .migrate-zoom {
-    transform-origin: 0% 0%;
+    transform-origin: 0 0;
 }
 .starters-zoom {
     transform-origin: 0 13%;
 }
 .leavers-zoom {
-    transform-origin: 0 80%;
+    transform-origin: 0 75%;
 }
 .archive-zoom {
     transform-origin: 0 100%;
 }
 .movers-zoom {
-    transform-origin: 25% 45%;
+    transform-origin: 40% 50%;
 }
 .joiners-zoom {
-    transform-origin: 62% 0;
+    transform-origin: 63% 0%;
 }
 .automate-zoom {
-    transform-origin: 100% 45%;
+    transform-origin: 100% 50%;
 }
 
 * {
@@ -128,30 +158,30 @@
     transition: 1s ease-in-out;
     max-width: 1920px;
     max-height: 1080px;
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
-
 .zoom {
     transform: scale(2.5);
+    transform-box: fill-box;
 }
-  
 .outer-circle-title {
     text-transform: uppercase;
     font-size: 28px;
 }
-  
 .clickable {
     cursor: pointer;
 }
-  
 .text-link {
     font-size: 20px;
     opacity: 0;
 }
-  
 .hidden {
     display: none;
 }
-
 .unhide {
     display: block;
+}
+.back-button {
+    opacity: 0;
 }
