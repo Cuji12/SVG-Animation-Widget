@@ -19,9 +19,9 @@
                     <image id="migrate-arrow-right" class="filter-migrate-arrow" x="430" y="72" href="../assets/SVG/migrate-arrow-right.svg" width="45" height="45"/>
                     <image id="starters-arrow-right" class="filter-starters-arrow" x="430" y="262" href="../assets/SVG/starters-arrow-right.svg" width="45" height="45"/>
 
-                    <circle id="migrate-pulse-unfocused" cx="315" cy="90" fill="var(--color-migrate-pulse)" r="70" stroke="var(--color-migrate-pulse)" stroke-width="2" fill="white">
-                        <animate attributeName="r" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                    <circle id="migrate-pulse-unfocused" cx="315" cy="90" fill="var(--color-migrate-pulse)" r="0" stroke="var(--color-migrate-pulse)" stroke-width="2" fill="white">
+                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
                     </circle>
                     <g id="migrate-group">
                         <a id="migrate-circle-link" href="/">
@@ -52,9 +52,9 @@
                     <animate xlink:href="#migrate-text-link3" attributeName="y" from="160" to="190" dur="0.5s" begin="migrateCircleAnim.begin + 1.8s" fill="freeze" />
                     <animate xlink:href="#migrate-text-link3" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1.8s" fill="freeze" />
 
-                    <circle id="starters-pulse-unfocused" cx="315" cy="282" fill="var(--color-starters-pulse)" r="70" stroke="var(--color-starters-pulse)" stroke-width="2">
-                        <animate attributeName="r" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                    <circle id="starters-pulse-unfocused" cx="315" cy="282" fill="var(--color-starters-pulse)" r="0" stroke="var(--color-starters-pulse)" stroke-width="2">
+                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite" id="startersAnim"/>
+                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
                     </circle>
 
                     <a id="starters-circle-link" href="/">
@@ -92,9 +92,9 @@
                     <image x="430" y="591" class="clickable filter-leavers-arrow" href="../assets/SVG/leavers-arrow-left.svg" width="45" height="45"/>
                     <image x="430" y="782" class="clickable filter-archive-arrow" href="../assets/SVG/archive-arrow-left.svg" width="45" height="45"/>
 
-                    <circle cx="315" cy="613" fill="var(--color-leavers-pulse)" r="70" stroke="var(--color-leavers-pulse)" stroke-width="2">
-                        <animate attributeName="r" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                    <circle cx="315" cy="613" fill="var(--color-leavers-pulse)" r="0" stroke="var(--color-leavers-pulse)" stroke-width="2">
+                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
                     </circle>
 
                     <a id="leavers-circle-link" href="/">
@@ -120,9 +120,9 @@
                     <animate xlink:href="#leavers-text-link2" attributeName="y" from="650" to="680" dur="0.5s" begin="leaversCircleAnim.begin + 1.4s" fill="freeze" />
                     <animate xlink:href="#leavers-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1.4s" fill="freeze" />
 
-                    <circle cx="315" cy="803" fill="var(--color-archive-pulse)" r="70" stroke="var(--color-archive-pulse)" stroke-width="2">
-                        <animate attributeName="r" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                    <circle cx="315" cy="803" fill="var(--color-archive-pulse)" r="0" stroke="var(--color-archive-pulse)" stroke-width="2">
+                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
                     </circle>
 
                     <a id="archive-circle-link" href="/">
@@ -164,9 +164,9 @@
                 </g>
                 <!-- Outer circle -->
                 <g>
-                    <circle cx="740" cy="450" fill="var(--color-inner-circle-pulse)" r="70" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
-                        <animate attributeName="r" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                    <circle cx="740" cy="450" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
+                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
                     </circle>
 
                     <image id="movers-circle" x="690" y="400" class="clickable zoom-anchor filter-movers-circle section" href="../assets/SVG/movers-circle.svg" width="100" height="100" data-zoom-origin="movers-zoom" data-section="movers"/>
@@ -181,9 +181,9 @@
                     <animate xlink:href="#movers-text-link1" attributeName="y" from="465" to="485" dur="0.5s" begin="moversCircleAnim.begin + 1s" fill="freeze" />
                     <animate xlink:href="#movers-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="moversCircleAnim.begin + 1s" fill="freeze" />
 
-                    <circle id="joiners-pulse-unfocused" cx="1000" cy="190" fill="var(--color-inner-circle-pulse)" r="70" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
-                        <animate attributeName="r" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                    <circle id="joiners-pulse-unfocused" cx="1000" cy="190" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
+                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
                     </circle>
 
                     <image id="joiners-circle" x="950" y="140" class="clickable zoom-anchor filter-joiners-circle section" href="../assets/SVG/joiners-circle.svg" width="100" height="100" data-zoom-origin="joiners-zoom" data-section="joiners"/>
@@ -211,9 +211,9 @@
                     <animate xlink:href="#joiners-text-link1" attributeName="y" from="65" to="35" dur="0.5s" begin="joinersCircleAnim.begin + 1.8s" fill="freeze" />
                     <animate xlink:href="#joiners-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1.8s" fill="freeze" />
 
-                    <circle cx="1260" cy="450" fill="var(--color-inner-circle-pulse)" r="70" stroke="var(--color-inner-circle-category)" stroke-width="2">
-                        <animate attributeName="r" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                    <circle cx="1260" cy="450" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-category)" stroke-width="2">
+                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
                     </circle>
 
                     <image id="automate-circle" x="1210" y="400" class="clickable zoom-anchor filter-automate-circle section" href="../assets/SVG/automate-circle.svg" width="100" height="100" data-zoom-origin="automate-zoom" data-section="automate"/>

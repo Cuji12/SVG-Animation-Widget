@@ -53,6 +53,8 @@ window.onload = (event) => {
     var zoomElements = document.getElementsByClassName('zoom-anchor')
     var backButtonElements = document.getElementsByClassName('back-button')
     var svgContainer = document.getElementById('animation-widget')
+    var sections = document.getElementsByClassName('section')
+    var pulseElements = document.getElementsByClassName('pulse')
     
     // Load in the links once all resources on page have loaded.
     for (var key in linkIds) {
@@ -66,19 +68,21 @@ window.onload = (event) => {
             e.preventDefault()
             var zoomOrigin = this.getAttribute('data-zoom-origin')
             var zoomSection = this.getAttribute('data-section')
-            var sections = document.getElementsByClassName('section')
 
             svgContainer.classList.add(zoomOrigin)
             svgContainer.setAttribute('data-zoom-origin', zoomOrigin)
             svgContainer.classList.add('zoom')
-            // Blur and grayscale all other than the zoomed in area.
-            // this.parentElement.parentElement
-            // document.getElementById('starters-circle').style.filter = "blur(5px) grayscale(100%)"
 
+            // Add blur and grayscale filters to all other than the zoomed in area.
             for (var i = 0; i < sections.length; i++) {
                 if(sections[i].getAttribute('data-section') !== zoomSection) {
                     sections[i].style.filter = "blur(5px) grayscale(100%)"
                 }
+            }
+
+            // Pause pulse animations.
+            for (var i = 0; i < pulseElements.length; i++) {
+                pulseElements[i].setAttribute('end', 0)
             }
         })
     }
@@ -88,6 +92,17 @@ window.onload = (event) => {
         backButtonElements[i].addEventListener('click', function () {
             // Data attribute has same name as the class for setting transform-origin, use this to target and remove the class on our SVG.
             var zoomOrigin = svgContainer.getAttribute('data-zoom-origin')
+
+            // Remove blur and grayscale filters.
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.filter = ""
+            }
+
+              // Resume pulse animations.
+              for (var i = 0; i < pulseElements.length; i++) {
+                pulseElements[i].setAttribute('end', 'indefinite')
+            }
+
             svgContainer.classList.remove(zoomOrigin)
             svgContainer.classList.remove('zoom')
         })
