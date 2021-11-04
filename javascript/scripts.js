@@ -107,8 +107,4 @@ window.onload = (event) => {
             svgContainer.classList.remove('zoom')
         })
     }
-
-
-
-
 }

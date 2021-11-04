@@ -147,10 +147,6 @@
     transform-origin: 100% 50%;
 }
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 #animation-widget {
     -webkit-transition: 1s ease-in-out;
     -moz-transition: 1s ease-in-out;
@@ -178,9 +174,15 @@
 .clickable {
     cursor: pointer;
 }
-.text-link {
-    font-size: 20px;
-    opacity: 0;
+.svg-anchor {
+    .text-link {
+        font-size: 20px;
+        opacity: 0;
+        &:hover {
+            text-decoration: solid underline #555555 2px;
+            text-decoration-thickness: 2px;
+        }
+    }
 }
 .hidden {
     display: none;
