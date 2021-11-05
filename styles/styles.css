@@ -1,3 +1,7 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Fills, these are used for everything other than images. */
 :root {
   /* Base colours */
@@ -129,6 +133,12 @@
   text-decoration-thickness: 2px;
 }
 
+.link-hover:hover {
+  -webkit-text-decoration: solid underline #555555 2px;
+          text-decoration: solid underline #555555 2px;
+  text-decoration-thickness: 2px;
+}
+
 .hidden {
   display: none;
 }
@@ -141,4 +151,13 @@
   opacity: 0;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
+}
+
+.circle-background {
+  fill: white;
+}
+
+.right-align-torigin {
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
 }
