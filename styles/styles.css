@@ -163,3 +163,11 @@
   -webkit-transform-origin: 100% 0;
           transform-origin: 100% 0;
 }
+
+#animation-widget a[data-disabled="true"] {
+  pointer-events: none;
+}
+
+#animation-widget a:focus-visible, #animation-widget a:focus-within {
+  outline: none;
+}

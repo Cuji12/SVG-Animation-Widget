@@ -54,6 +54,7 @@ window.onload = () => {
     var sections = Array.from(document.getElementsByClassName('section'))
     var pulseElements = Array.from(document.getElementsByClassName('pulse'))
     var endAnimationElements = Array.from(document.getElementsByClassName('end-animation'))
+    var firstTextLinks = Array.from(document.getElementsByClassName('first-text-link'))
 
     // Load in the links once all resources on page have loaded.
     for (var key in linkIds) {
@@ -63,12 +64,12 @@ window.onload = () => {
 
     /* Event functions */
     function zoomIn() {
-        console.log(1)
         event.preventDefault()
         let zoomOrigin = this.getAttribute('data-zoom-origin')
         let zoomSection = this.getAttribute('data-section')
         let parentGroup = document.getElementById(`${zoomSection}-group`)
         let elementsToUnhide = Array.from(parentGroup.querySelectorAll('[data-display="hidden"]'))
+        let zoomedInAreaLinks = Array.from(parentGroup.querySelectorAll('a'))
 
         for (let i = 0; i < elementsToUnhide.length; i++) {
             elementsToUnhide[i].setAttribute('data-display', 'unhide')
@@ -89,6 +90,15 @@ window.onload = () => {
         for (let i = 0; i < pulseElements.length; i++) {
             pulseElements[i].setAttribute('end', 0)
         }
+
+        // Disable links until after the first link has finished it's animation.
+        for (let i = 0; i < zoomedInAreaLinks.length; i++) {
+            zoomedInAreaLinks[i].setAttribute('data-disabled', true)
+        }
+
+        // Remove event listener to allow circle / titles to be clickable links. 
+        this.removeEventListener('click', zoomIn)
+
     }
 
     function zoomOut() {
@@ -128,7 +138,15 @@ window.onload = () => {
     }
 
     // Add event listeners to back buttons.
-    for (var i = 0; i < backButtonElements.length; i++) {
+    for (let i = 0; i < backButtonElements.length; i++) {
         backButtonElements[i].addEventListener('click', zoomOut)
+    }
+
+    // Add event listeners to first text link of each section for re-enabling the pointer-events styling.
+    for (let i = 0; i < firstTextLinks.length; i++) {
+        // You need to target the animate elements themselves and then use that to target the data-disabled attributes of the corresponding element it's animating
+        firstTextLinks[i].parentElement.addEventListener('endEvent', function () {
+            this.setAttribute('data-disabled', false)
+        })
     }
 }
