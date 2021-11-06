@@ -191,10 +191,12 @@
     text-decoration: solid underline #555555 2px;
     text-decoration-thickness: 2px;
 }
-.hidden {
+#animation-widget text[data-display="hidden"], 
+#animation-widget image[data-display="hidden"] {
     display: none;
 }
-.unhide {
+#animation-widget text[data-display="unhide"], 
+#animation-widget image[data-display="unhide"] {
     display: block;
 }
 .back-button {

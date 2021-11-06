@@ -47,64 +47,88 @@ const linkIds = {
     'archive-text-link1': archiveLink1,'archive-text-link2': archiveLink2
 }
 
-// Implement object that consists of key-val pairs for different zoom origins.
-
-window.onload = (event) => {
-    var zoomElements = document.getElementsByClassName('zoom-anchor')
-    var backButtonElements = document.getElementsByClassName('back-button')
+window.onload = () => {
+    var zoomElements = Array.from(document.getElementsByClassName('zoom-anchor'))
+    var backButtonElements = Array.from(document.getElementsByClassName('back-button'))
     var svgContainer = document.getElementById('animation-widget')
-    var sections = document.getElementsByClassName('section')
-    var pulseElements = document.getElementsByClassName('pulse')
-    
+    var sections = Array.from(document.getElementsByClassName('section'))
+    var pulseElements = Array.from(document.getElementsByClassName('pulse'))
+    var endAnimationElements = Array.from(document.getElementsByClassName('end-animation'))
+
     // Load in the links once all resources on page have loaded.
     for (var key in linkIds) {
         document.getElementById(key).setAttribute('href', linkIds[key])
         document.getElementById(key).setAttribute('target', targetBehaviour)
     }
+
+    /* Event functions */
+    function zoomIn() {
+        console.log(1)
+        event.preventDefault()
+        let zoomOrigin = this.getAttribute('data-zoom-origin')
+        let zoomSection = this.getAttribute('data-section')
+        let parentGroup = document.getElementById(`${zoomSection}-group`)
+        let elementsToUnhide = Array.from(parentGroup.querySelectorAll('[data-display="hidden"]'))
+
+        for (let i = 0; i < elementsToUnhide.length; i++) {
+            elementsToUnhide[i].setAttribute('data-display', 'unhide')
+        }
+
+        svgContainer.classList.add(zoomOrigin)
+        svgContainer.setAttribute('data-zoom-origin', zoomOrigin)
+        svgContainer.classList.add('zoom')
+
+        // Add blur and grayscale filters to all other than the zoomed in area.
+        for (let i = 0; i < sections.length; i++) {
+            if (sections[i].getAttribute('data-section') !== zoomSection) {
+                sections[i].style.filter = 'blur(5px) grayscale(100%)'
+            }
+        }
+
+        // Pause pulse animations.
+        for (let i = 0; i < pulseElements.length; i++) {
+            pulseElements[i].setAttribute('end', 0)
+        }
+    }
+
+    function zoomOut() {
+         // Data attribute has same name as the class for setting transform-origin, use this to target and remove the class on our SVG.
+         var zoomOrigin = svgContainer.getAttribute('data-zoom-origin')
+
+         // Remove blur and grayscale filters.
+         for (var i = 0; i < sections.length; i++) {
+             sections[i].style.filter = ""
+         }
+
+         // Resume pulse animations.
+         for (var i = 0; i < pulseElements.length; i++) {
+             pulseElements[i].setAttribute('end', 'indefinite')
+         }
+
+         svgContainer.classList.remove(zoomOrigin)
+         svgContainer.classList.remove('zoom')
+    }
+
+    function hideElementsAfterZoomOut() {
+        let elementsToHide = Array.from(document.querySelectorAll('[data-display="unhide"]'))
+        for (let i = 0; i < elementsToHide.length; i++) {
+            elementsToHide[i].setAttribute('data-display', 'hidden')
+        }
+    }
+
+    /* Adding event listeners */
+    // Add events for the ending animations to add display: none to links only after the animations have ended. 
+    for (let i = 0; i < endAnimationElements.length; i++) {
+        endAnimationElements[i].addEventListener('endEvent', hideElementsAfterZoomOut)
+    }
  
     // Add event listeners to the images for each zoom section.
-    for (var i = 0; i < zoomElements.length; i++) {
-        zoomElements[i].addEventListener('click', function (e) {
-            e.preventDefault()
-            var zoomOrigin = this.getAttribute('data-zoom-origin')
-            var zoomSection = this.getAttribute('data-section')
-
-            svgContainer.classList.add(zoomOrigin)
-            svgContainer.setAttribute('data-zoom-origin', zoomOrigin)
-            svgContainer.classList.add('zoom')
-
-            // Add blur and grayscale filters to all other than the zoomed in area.
-            for (var i = 0; i < sections.length; i++) {
-                if(sections[i].getAttribute('data-section') !== zoomSection) {
-                    sections[i].style.filter = "blur(5px) grayscale(100%)"
-                }
-            }
-
-            // Pause pulse animations.
-            for (var i = 0; i < pulseElements.length; i++) {
-                pulseElements[i].setAttribute('end', 0)
-            }
-        })
+    for (let i = 0; i < zoomElements.length; i++) {
+        zoomElements[i].addEventListener('click', zoomIn)
     }
 
     // Add event listeners to back buttons.
     for (var i = 0; i < backButtonElements.length; i++) {
-        backButtonElements[i].addEventListener('click', function () {
-            // Data attribute has same name as the class for setting transform-origin, use this to target and remove the class on our SVG.
-            var zoomOrigin = svgContainer.getAttribute('data-zoom-origin')
-
-            // Remove blur and grayscale filters.
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.filter = ""
-            }
-
-              // Resume pulse animations.
-              for (var i = 0; i < pulseElements.length; i++) {
-                pulseElements[i].setAttribute('end', 'indefinite')
-            }
-
-            svgContainer.classList.remove(zoomOrigin)
-            svgContainer.classList.remove('zoom')
-        })
+        backButtonElements[i].addEventListener('click', zoomOut)
     }
 }

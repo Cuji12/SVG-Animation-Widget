@@ -28,25 +28,25 @@
                         <a id="migrate-circle-link" href="/">
                             <image id="migrate-circle" x="265" y="40" class="clickable zoom-anchor filter-migrate-circle section" href="../assets/SVG/migrate-circle.svg" width="100" height="100" data-zoom-origin="migrate-zoom" data-section="migrate"/>
                         </a>
-                        <image id="migrate-back-button" class="back-button clickable migrate-back-button" x="230" y="40" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30"/>
+                        <image id="migrate-back-button" class="back-button clickable migrate-back-button" x="230" y="40" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
                         <a id="migrate-title-link" href="/">
                             <text x="250" y="103" class="outer-circle-title clickable section right-align-torigin" fill="var(--color-migrate-title)" data-section="migrate" text-anchor="end">Migrate</text>
                         </a>
                         <a id="migrate-link-1" class="svg-anchor" href="/">
-                            <text id="migrate-text-link1" x="250" y="130" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end">File & Email</text>
+                            <text id="migrate-text-link1" x="250" y="130" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">File & Email</text>
                         </a>
                         <a id="migrate-link-2" class="svg-anchor" href="/">
-                            <text id="migrate-text-link2" x="250" y="160" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end">Mergers & Acquisition</text>
+                            <text id="migrate-text-link2" x="250" y="160" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Mergers & Acquisition</text>
                         </a>
                         <a id="migrate-link-3" class="svg-anchor" href="/">
-                            <text id="migrate-text-link3" x="250" y="190" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end">Domain Consolidation</text> -->
+                            <text id="migrate-text-link3" x="250" y="190" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Domain Consolidation</text>
                         </a>
                     </g>
                     <!-- Migrate arrow animation -->
-                    <animate xlink:href="#migrate-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1s" fill="freeze" />
+                    <animate xlink:href="#migrate-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1s" fill="freeze" data-display="hidden"/>
                     <!-- Migrate text animations -->
                     <animate xlink:href="#migrate-circle" attributeName="x" from="" to="" dur="0.1s" begin="click" id="migrateCircleAnim" />
-                    <animate xlink:href="#migrate-text-link1" attributeName="y" from="100" to="130" dur="0.5s" begin="migrateCircleAnim.begin + 1s" fill="freeze" />
+                    <animate xlink:href="#migrate-text-link1" attributeName="y" from="100" to="130" dur="0.5s" begin="migrateCircleAnim.begin + 1s" fill="freeze"/>
                     <animate xlink:href="#migrate-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1s" fill="freeze" />
                     <animate xlink:href="#migrate-text-link2" attributeName="y" from="130" to="160" dur="0.5s" begin="migrateCircleAnim.begin + 1.4s" fill="freeze" />
                     <animate xlink:href="#migrate-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1.4s" fill="freeze" />
@@ -58,26 +58,28 @@
                         <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
                     </circle>
 
-                    <circle cx="315" cy="282" class="circle-background" r="50"></circle>
-                    <a id="starters-circle-link" href="/">
-                        <image id="starters-circle" x="265" y="232" class="clickable zoom-anchor filter-starters-circle section" href="../assets/SVG/starters-circle.svg" width="100" height="100" data-zoom-origin="starters-zoom" data-section="starters"/>
-                    </a>
-                    <image id="starters-back-button" class="back-button clickable starters-back-button" x="235" y="232" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30"/>
-                    <a id="starters-title-link" href="/">
-                        <text x="250" y="294" class="outer-circle-title clickable section" fill="var(--color-starters-title)" font-size="22px" data-section="starters" text-anchor="end">Starters</text>
-                    </a>
-                    <a id="starters-link-1" class="svg-anchor" href="/">
-                        <text id="starters-text-link1" x="250" y="320" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end">HR Integration</text>
-                    </a>
-                    <a id="starters-link-2" class="svg-anchor" href="/">
-                        <text id="starters-text-link2" x="250" y="350" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end">IDM Integration</text>
-                    </a>
-                    <a id="starters-link-3" class="svg-anchor" href="/">
-                        <text id="starters-text-link3" x="250" y="380" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end">AD Integration</text>
-                    </a>
+                    <g id="starters-group">
+                        <circle cx="315" cy="282" class="circle-background" r="50"></circle>
+                        <a id="starters-circle-link" href="/">
+                            <image id="starters-circle" x="265" y="232" class="clickable zoom-anchor filter-starters-circle section" href="../assets/SVG/starters-circle.svg" width="100" height="100" data-zoom-origin="starters-zoom" data-section="starters"/>
+                        </a>
+                        <image id="starters-back-button" class="back-button clickable starters-back-button" x="235" y="232" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
+                        <a id="starters-title-link" href="/">
+                            <text x="250" y="294" class="outer-circle-title clickable section" fill="var(--color-starters-title)" font-size="22px" data-section="starters" text-anchor="end">Starters</text>
+                        </a>
+                        <a id="starters-link-1" class="svg-anchor" href="/">
+                            <text id="starters-text-link1" x="250" y="320" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">HR Integration</text>
+                        </a>
+                        <a id="starters-link-2" class="svg-anchor" href="/">
+                            <text id="starters-text-link2" x="250" y="350" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">IDM Integration</text>
+                        </a>
+                        <a id="starters-link-3" class="svg-anchor" href="/">
+                            <text id="starters-text-link3" x="250" y="380" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">AD Integration</text>
+                        </a>
+                    </g>
 
                     <!-- Starters arrow animation -->
-                    <animate xlink:href="#starters-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1s" fill="freeze" />
+                    <animate xlink:href="#starters-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1s" fill="freeze" data-display="hidden"/>
                     <!-- Starters text animations -->
                     <animate xlink:href="#starters-circle" attributeName="x" from="" to="" dur="0.1s" begin="click" id="startersCircleAnim" />
                     <animate xlink:href="#starters-text-link1" attributeName="y" from="290" to="320" dur="0.5s" begin="startersCircleAnim.begin + 1s" fill="freeze" />
@@ -99,23 +101,25 @@
                         <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
                     </circle>
 
-                    <circle cx="315" cy="613" class="circle-background" r="50"></circle>
-                    <a id="leavers-circle-link" href="/">
-                        <image id="leavers-circle" x="265" y="563" class="clickable zoom-anchor filter-leavers-circle section" href="../assets/SVG/leavers-circle.svg" width="100" height="100" data-zoom-origin="leavers-zoom" data-section="leavers"/>
-                    </a>
-                    <image id="leavers-back-button" class="back-button clickable leavers-back-button" x="235" y="563" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30"/>
-                    <a id="leavers-title-link" href="/">
-                        <text x="250" y="623" class="outer-circle-title clickable section" fill="var(--color-leavers-title)" font-size="22px" data-section="leavers" text-anchor="end">Leavers</text>
-                    </a>
-                    <a id="leavers-link-1" class="svg-anchor" href="/">
-                        <text id="leavers-text-link1" x="250" y="650" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end">Revoke Access</text>
-                    </a>
-                    <a id="leavers-link-2" class="svg-anchor" href="/">
-                        <text id="leavers-text-link2" x="250" y="680" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end">Migrate Emails</text>
-                    </a>
+                    <g id="leavers-group">
+                        <circle cx="315" cy="613" class="circle-background" r="50"></circle>
+                        <a id="leavers-circle-link" href="/">
+                            <image id="leavers-circle" x="265" y="563" class="clickable zoom-anchor filter-leavers-circle section" href="../assets/SVG/leavers-circle.svg" width="100" height="100" data-zoom-origin="leavers-zoom" data-section="leavers"/>
+                        </a>
+                        <image id="leavers-back-button" class="back-button clickable leavers-back-button" x="235" y="563" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
+                        <a id="leavers-title-link" href="/">
+                            <text x="250" y="623" class="outer-circle-title clickable section" fill="var(--color-leavers-title)" font-size="22px" data-section="leavers" text-anchor="end">Leavers</text>
+                        </a>
+                        <a id="leavers-link-1" class="svg-anchor" href="/">
+                            <text id="leavers-text-link1" x="250" y="650" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end" data-display="hidden">Revoke Access</text>
+                        </a>
+                        <a id="leavers-link-2" class="svg-anchor" href="/">
+                            <text id="leavers-text-link2" x="250" y="680" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end" data-display="hidden">Migrate Emails</text>
+                        </a>
+                    </g>
                     
                     <!-- Leavers arrow animation -->
-                    <animate xlink:href="#leavers-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1s" fill="freeze" />
+                    <animate xlink:href="#leavers-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1s" fill="freeze" data-display="hidden"/>
                     <!-- Leavers text animations -->
                     <animate xlink:href="#leavers-circle" attributeName="x" from="" to="" dur="0.1s" begin="click" id="leaversCircleAnim" />
                     <animate xlink:href="#leavers-text-link1" attributeName="y" from="620" to="650" dur="0.5s" begin="leaversCircleAnim.begin + 1s" fill="freeze" />
@@ -128,20 +132,22 @@
                         <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
                     </circle>
 
-                    <circle cx="315" cy="803" class="circle-background" r="50"></circle>
-                    <a id="archive-circle-link" href="/">
-                        <image id="archive-circle" x="265" y="753" class="clickable zoom-anchor filter-archive-circle section" href="../assets/SVG/archive-circle.svg" width="100" height="100" data-zoom-origin="archive-zoom" data-section="archive"/>
-                    </a>
-                    <image id="archive-back-button" class="back-button clickable archive-back-button" x="235" y="753" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30"/>
-                    <a id="archive-title-link" href="/">
-                        <text x="250" y="813" class="outer-circle-title clickable section" fill="var(--color-archive-title)" data-section="archive" text-anchor="end">Archive</text>
-                    </a>
-                    <a id="" class="svg-anchor" href="/">
-                        <text id="archive-text-link1" x="250" y="840" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end">Archive Data</text>
-                    </a>
-                    <a id="" class="svg-anchor" href="/">
-                        <text id="archive-text-link2" x="250" y="870" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end">Search And Restore</text>
-                    </a>
+                    <g id="archive-group">
+                        <circle cx="315" cy="803" class="circle-background" r="50"></circle>
+                        <a id="archive-circle-link" href="/">
+                            <image id="archive-circle" x="265" y="753" class="clickable zoom-anchor filter-archive-circle section" href="../assets/SVG/archive-circle.svg" width="100" height="100" data-zoom-origin="archive-zoom" data-section="archive"/>
+                        </a>
+                        <image id="archive-back-button" class="back-button clickable archive-back-button" x="235" y="753" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
+                        <a id="archive-title-link" href="/">
+                            <text x="250" y="813" class="outer-circle-title clickable section" fill="var(--color-archive-title)" data-section="archive" text-anchor="end">Archive</text>
+                        </a>
+                        <a id="" class="svg-anchor" href="/">
+                            <text id="archive-text-link1" x="250" y="840" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end" data-display="hidden">Archive Data</text>
+                        </a>
+                        <a id="" class="svg-anchor" href="/">
+                            <text id="archive-text-link2" x="250" y="870" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end" data-display="hidden">Search And Restore</text>
+                        </a>
+                    </g>
 
                     <!-- Archive arrow animation -->
                     <animate xlink:href="#archive-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="archiveCircleAnim.begin + 1s" fill="freeze" />
@@ -173,13 +179,15 @@
                         <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
                     </circle>
 
-                    <circle cx="740" cy="450" class="circle-background" r="50"></circle>
-                    <image id="movers-circle" x="690" y="400" class="clickable zoom-anchor filter-movers-circle section" href="../assets/SVG/movers-circle.svg" width="100" height="100" data-zoom-origin="movers-zoom" data-section="movers"/>
-                    <image id="movers-back-button" class="back-button clickable outer-circle-back-button" x="655" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30"/>
-                    <text x="675" y="461" class="outer-circle-title clickable section" fill="var(--color-inner-circle-title)" data-section="movers" text-anchor="end">Movers</text>
-                    <a id="movers-link1" class="svg-anchor">
-                        <text id="movers-text-link1" x="675" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="end">Least Privilege Access</text>
-                    </a>
+                    <g id="movers-group">
+                        <circle cx="740" cy="450" class="circle-background" r="50"></circle>
+                        <image id="movers-circle" x="690" y="400" class="clickable zoom-anchor filter-movers-circle section" href="../assets/SVG/movers-circle.svg" width="100" height="100" data-zoom-origin="movers-zoom" data-section="movers"/>
+                        <image id="movers-back-button" class="back-button clickable outer-circle-back-button" x="655" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
+                        <text x="675" y="461" class="outer-circle-title clickable section" fill="var(--color-inner-circle-title)" data-section="movers" text-anchor="end">Movers</text>
+                        <a id="movers-link1" class="svg-anchor">
+                            <text id="movers-text-link1" x="675" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="end" data-display="hidden">Least Privilege Access</text>
+                        </a>
+                    </g>
 
                      <!-- Movers arrow animation -->
                     <animate xlink:href="#movers-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="moversCircleAnim.begin + 1s" fill="freeze" />
@@ -193,19 +201,21 @@
                         <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
                     </circle>
 
-                    <circle cx="1000" cy="190" class="circle-background" r="50"></circle>
-                    <image id="joiners-circle" x="950" y="140" class="clickable zoom-anchor filter-joiners-circle section" href="../assets/SVG/joiners-circle.svg" width="100" height="100" data-zoom-origin="joiners-zoom" data-section="joiners"/>
-                    <image id="joiners-back-button" class="back-button clickable outer-circle-back-button" x="1050" y="140" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30"/>
-                    <text id="joiners-title" x="1000" y="128" class="outer-circle-title clickable section" fill="var(--color-inner-circle-title)" data-section="joiners" text-anchor="middle">Joiners</text>
-                    <a id="" class="svg-anchor" href="/">
-                        <text id="joiners-text-link1" x="1000" y="35" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle">Files/Folder/Calendar</text>
-                    </a>
-                    <a id="" class="svg-anchor" href="/">
-                        <text id="joiners-text-link2" x="1000" y="65" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle">Email Signatures</text>
-                    </a>
-                    <a id="" class="svg-anchor" href="/">
-                        <text id="joiners-text-link3" x="1000" y="95" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle">SaaS License Management</text>
-                    </a>
+                    <g id="joiners-group">
+                        <circle cx="1000" cy="190" class="circle-background" r="50"></circle>
+                        <image id="joiners-circle" x="950" y="140" class="clickable zoom-anchor filter-joiners-circle section" href="../assets/SVG/joiners-circle.svg" width="100" height="100" data-zoom-origin="joiners-zoom" data-section="joiners"/>
+                        <image id="joiners-back-button" class="back-button clickable outer-circle-back-button" x="1050" y="140" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
+                        <text id="joiners-title" x="1000" y="128" class="outer-circle-title clickable section" fill="var(--color-inner-circle-title)" data-section="joiners" text-anchor="middle">Joiners</text>
+                        <a id="" class="svg-anchor" href="/">
+                            <text id="joiners-text-link1" x="1000" y="35" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">Files/Folder/Calendar</text>
+                        </a>
+                        <a id="" class="svg-anchor" href="/">
+                            <text id="joiners-text-link2" x="1000" y="65" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">Email Signatures</text>
+                        </a>
+                        <a id="" class="svg-anchor" href="/">
+                            <text id="joiners-text-link3" x="1000" y="95" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">SaaS License Management</text>
+                        </a>
+                    </g>
 
                     <animate xlink:href="#joiners-circle" attributeName="width" from="100" to="100" dur="0.1s" begin="click" id="joinersCircleAnim" fill="freeze" />
 
@@ -224,13 +234,15 @@
                         <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
                     </circle>
 
-                    <circle cx="1260" cy="450" class="circle-background" r="50"></circle>
-                    <image id="automate-circle" x="1210" y="400" class="clickable zoom-anchor filter-automate-circle section" href="../assets/SVG/automate-circle.svg" width="100" height="100" data-zoom-origin="automate-zoom" data-section="automate"/>
-                    <image id="automate-back-button" class="back-button clickable outer-circle-back-button" x="1310" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30"/>
-                    <text x="1327" y="460" class="outer-circle-title clickable section" fill="var(--color-inner-circle-title)" data-section="automate">Automate</text>
-                    <a id="" class="svg-anchor" href="/">
-                        <text id="automate-text-link1" x="1326" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)">Smart Teams</text>
-                    </a>
+                    <g id="automate-group">
+                        <circle cx="1260" cy="450" class="circle-background" r="50"></circle>
+                        <image id="automate-circle" x="1210" y="400" class="clickable zoom-anchor filter-automate-circle section" href="../assets/SVG/automate-circle.svg" width="100" height="100" data-zoom-origin="automate-zoom" data-section="automate"/>
+                        <image id="automate-back-button" class="back-button clickable outer-circle-back-button" x="1310" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
+                        <text x="1327" y="460" class="outer-circle-title clickable section" fill="var(--color-inner-circle-title)" data-section="automate">Automate</text>
+                        <a id="" class="svg-anchor" href="/">
+                            <text id="automate-text-link1" x="1326" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)" data-display="hidden">Smart Teams</text>
+                        </a>
+                    </g>
                     <!-- Automate arrow animation -->
                     <animate xlink:href="#automate-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="automateCircleAnim.begin + 1s" fill="freeze" />
                     <!-- Automate text animations -->
@@ -248,7 +260,7 @@
                     <!-- Movers animations zoom out -->
                     <animate xlink:href="#movers-back-button" id="moversZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
                     <animate xlink:href="#movers-text-link1" attributeName="y" from="485" to="465" dur="0.5s" begin="moversZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate xlink:href="#movers-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="moversZoomOutAnim.begin + 0.5s" fill="freeze" />
+                    <animate xlink:href="#movers-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="moversZoomOutAnim.begin + 0.5s" fill="freeze" />
 
                     <!-- Joiners animations zoom out -->
                     <animate xlink:href="#joiners-back-button" id="joinersZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
@@ -257,12 +269,12 @@
                     <animate xlink:href="#joiners-text-link2" attributeName="y" from="65" to="95" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.9s" fill="freeze" />
                     <animate xlink:href="#joiners-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.9s" fill="freeze" />
                     <animate xlink:href="#joiners-text-link3" attributeName="y" from="95" to="125" dur="0.5s" begin="joinersZoomOutAnim.begin + 1.3s" fill="freeze" />
-                    <animate xlink:href="#joiners-text-link3" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 1.3s" fill="freeze" />
+                    <animate xlink:href="#joiners-text-link3"class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 1.3s" fill="freeze" />
 
                     <!-- Automate animations zoom out -->
                     <animate xlink:href="#automate-back-button" id="automateZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
                     <animate xlink:href="#automate-text-link1" attributeName="y" from="485" to="455" dur="0.5s" begin="automateZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate xlink:href="#automate-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="automateZoomOutAnim.begin + 0.5s" fill="freeze" />
+                    <animate xlink:href="#automate-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="automateZoomOutAnim.begin + 0.5s" fill="freeze" />
                     <!-- Migrate animations zoom out -->
                     <animate xlink:href="#migrate-back-button" id="migrateZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
                     <animate xlink:href="#migrate-text-link3" attributeName="y" from="190" to="160" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.5s" fill="freeze" />
@@ -270,7 +282,7 @@
                     <animate xlink:href="#migrate-text-link2" attributeName="y" from="160" to="130" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.9s" fill="freeze" />
                     <animate xlink:href="#migrate-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.9s" fill="freeze" />
                     <animate xlink:href="#migrate-text-link1" attributeName="y" from="130" to="100" dur="0.5s" begin="migrateZoomOutAnim.begin + 1.3s" fill="freeze" />
-                    <animate xlink:href="#migrate-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 1.3s" fill="freeze" />
+                    <animate xlink:href="#migrate-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 1.3s" fill="freeze" />
 
                     <!-- Starters animations zoom out -->
                     <animate xlink:href="#starters-back-button" id="startersZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
@@ -279,7 +291,7 @@
                     <animate xlink:href="#starters-text-link2" attributeName="y" from="350" to="320" dur="0.5s" begin="startersZoomOutAnim.begin + 0.9s" fill="freeze" />
                     <animate xlink:href="#starters-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 0.9s" fill="freeze" />
                     <animate xlink:href="#starters-text-link1" attributeName="y" from="320" to="290" dur="0.5s" begin="startersZoomOutAnim.begin + 1.3s" fill="freeze" />
-                    <animate xlink:href="#starters-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 1.3s" fill="freeze" />
+                    <animate xlink:href="#starters-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 1.3s" fill="freeze" />
 
    
                     <!-- Leavers animations zoom out -->
@@ -287,14 +299,14 @@
                     <animate xlink:href="#leavers-text-link2" attributeName="y" from="680" to="650" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.5s" fill="freeze" />
                     <animate xlink:href="#leavers-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.5s" fill="freeze" />
                     <animate xlink:href="#leavers-text-link1" attributeName="y" from="650" to="620" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate xlink:href="#leavers-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.9s" fill="freeze" />
+                    <animate xlink:href="#leavers-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.9s" fill="freeze" />
 
                     <!-- Archive animations zoom out -->
                     <animate xlink:href="#archive-back-button" id="archiveZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
                     <animate xlink:href="#archive-text-link2" attributeName="y" from="870" to="840" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.5s" fill="freeze" />
                     <animate xlink:href="#archive-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.5s" fill="freeze" />
                     <animate xlink:href="#archive-text-link1" attributeName="y" from="840" to="810" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate xlink:href="#archive-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.9s" fill="freeze" />
+                    <animate xlink:href="#archive-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.9s" fill="freeze" />
                 </g>
 
                 <!-- ** Paths for use in draw animation ** -->
