@@ -164,7 +164,7 @@
           transform-origin: 100% 0;
 }
 
-#animation-widget a[data-disabled="true"] {
+#animation-widget *[data-disabled="true"] {
   pointer-events: none;
 }
 

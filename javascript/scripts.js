@@ -70,6 +70,8 @@ window.onload = () => {
         let parentGroup = document.getElementById(`${zoomSection}-group`)
         let elementsToUnhide = Array.from(parentGroup.querySelectorAll('[data-display="hidden"]'))
         let zoomedInAreaLinks = Array.from(parentGroup.querySelectorAll('a'))
+        let separatorChar = this.id.indexOf('-')
+
 
         for (let i = 0; i < elementsToUnhide.length; i++) {
             elementsToUnhide[i].setAttribute('data-display', 'unhide')
@@ -79,10 +81,11 @@ window.onload = () => {
         svgContainer.setAttribute('data-zoom-origin', zoomOrigin)
         svgContainer.classList.add('zoom')
 
-        // Add blur and grayscale filters to all other than the zoomed in area.
+        // Add blur and grayscale filters to all other than the zoomed in area, also disable other sections from being clickable.
         for (let i = 0; i < sections.length; i++) {
             if (sections[i].getAttribute('data-section') !== zoomSection) {
                 sections[i].style.filter = 'blur(5px) grayscale(100%)'
+                sections[i].setAttribute('data-disabled', true)
             }
         }
 
@@ -99,29 +102,41 @@ window.onload = () => {
         // Remove event listener to allow circle / titles to be clickable links. 
         this.removeEventListener('click', zoomIn)
 
+        // Either setup element to the circle or title depending on which the user clicked.
+        if (this.id.includes('circle') === true ) {
+            let elementToRemoveEvent = document.getElementById(`${this.id.substr(0, separatorChar)}-title`)
+            elementToRemoveEvent.removeEventListener('click', zoomIn)
+        } else {
+            let elementToRemoveEvent = document.getElementById(`${this.id.substr(0, separatorChar)}-circle`)
+            elementToRemoveEvent.removeEventListener('click', zoomIn)
+        }
     }
 
     function zoomOut() {
-         // Data attribute has same name as the class for setting transform-origin, use this to target and remove the class on our SVG.
-         var zoomOrigin = svgContainer.getAttribute('data-zoom-origin')
+        // Data attribute has same name as the class for setting transform-origin, use this to target and remove the class on our SVG.
+        var zoomOrigin = svgContainer.getAttribute('data-zoom-origin')
 
-         // Remove blur and grayscale filters.
-         for (var i = 0; i < sections.length; i++) {
-             sections[i].style.filter = ""
-         }
+        // Resume pulse animations.
+        for (var i = 0; i < pulseElements.length; i++) {
+            pulseElements[i].setAttribute('end', 'indefinite')
+        }
 
-         // Resume pulse animations.
-         for (var i = 0; i < pulseElements.length; i++) {
-             pulseElements[i].setAttribute('end', 'indefinite')
-         }
+        // Remove blur and grayscale filters, also disable sections.
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.filter = ""
+            sections[i].setAttribute('data-disabled', true)
+        }
 
         // Re-add our zoomIn event listener
         let zoomCircle = this.id
         let separatorChar = zoomCircle.indexOf('-')
+        let zoomTitle = document.getElementById(`${zoomCircle.substr(0, separatorChar)}-title`)
 
         zoomCircle = document.getElementById(`${zoomCircle.substr(0, separatorChar)}-circle`)
         zoomCircle.addEventListener('click', zoomIn) 
+        zoomTitle.addEventListener('click', zoomIn) 
 
+        // Remove current zoomOrigin data-attr and remove zoom class to take us back out.
         svgContainer.classList.remove(zoomOrigin)
         svgContainer.classList.remove('zoom')
     }
@@ -131,6 +146,12 @@ window.onload = () => {
         for (let i = 0; i < elementsToHide.length; i++) {
             elementsToHide[i].setAttribute('data-display', 'hidden')
         }
+
+        // Re-enable elements after last animation has ended on zoomOut.
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].setAttribute('data-disabled', false)
+        }
+    
     }
 
     /* Adding event listeners */
@@ -148,7 +169,6 @@ window.onload = () => {
     for (let i = 0; i < backButtonElements.length; i++) {
         backButtonElements[i].addEventListener('click', zoomOut)
     }
-
 
     // Add event listeners to first text link animation of each section for re-enabling the pointer-events styling.
     for (let i = 0; i < firstTextLinksAnimations.length; i++) {
