@@ -54,7 +54,7 @@ window.onload = () => {
     var sections = Array.from(document.getElementsByClassName('section'))
     var pulseElements = Array.from(document.getElementsByClassName('pulse'))
     var endAnimationElements = Array.from(document.getElementsByClassName('end-animation'))
-    var firstTextLinks = Array.from(document.getElementsByClassName('first-text-link'))
+    var firstTextLinksAnimations = Array.from(document.getElementsByClassName('start-animation'))
 
     // Load in the links once all resources on page have loaded.
     for (var key in linkIds) {
@@ -115,8 +115,15 @@ window.onload = () => {
              pulseElements[i].setAttribute('end', 'indefinite')
          }
 
-         svgContainer.classList.remove(zoomOrigin)
-         svgContainer.classList.remove('zoom')
+        // Re-add our zoomIn event listener
+        let zoomCircle = this.id
+        let separatorChar = zoomCircle.indexOf('-')
+
+        zoomCircle = document.getElementById(`${zoomCircle.substr(0, separatorChar)}-circle`)
+        zoomCircle.addEventListener('click', zoomIn) 
+
+        svgContainer.classList.remove(zoomOrigin)
+        svgContainer.classList.remove('zoom')
     }
 
     function hideElementsAfterZoomOut() {
@@ -142,11 +149,21 @@ window.onload = () => {
         backButtonElements[i].addEventListener('click', zoomOut)
     }
 
-    // Add event listeners to first text link of each section for re-enabling the pointer-events styling.
-    for (let i = 0; i < firstTextLinks.length; i++) {
+
+    // Add event listeners to first text link animation of each section for re-enabling the pointer-events styling.
+    for (let i = 0; i < firstTextLinksAnimations.length; i++) {
         // You need to target the animate elements themselves and then use that to target the data-disabled attributes of the corresponding element it's animating
-        firstTextLinks[i].parentElement.addEventListener('endEvent', function () {
-            this.setAttribute('data-disabled', false)
+        firstTextLinksAnimations[i].addEventListener('endEvent', function () {
+            // Use the current zoom origin data attr on our SVG element to determine the current section.
+            let zoomSection = document.getElementById('animation-widget').getAttribute('data-zoom-origin')
+            let separatorChar = zoomSection.indexOf('-')
+            zoomSection = document.getElementById(`${zoomSection.substr(0, separatorChar)}-group`)
+            let zoomedInAreaLinks = Array.from(zoomSection.querySelectorAll('a'))
+            
+            // Re-enable all links within the section after first text animates in.
+            for (let i = 0; i < zoomedInAreaLinks.length; i++) {
+                zoomedInAreaLinks[i].setAttribute('data-disabled', false)
+            }
         })
     }
 }
