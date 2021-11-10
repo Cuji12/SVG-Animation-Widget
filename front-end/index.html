@@ -1,348 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Cloud M - SVG Animation Widget</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link rel="stylesheet" href="../styles/styles.css"/>
-        <script src="../javascript/scripts.js"></script>
-    </head>
-    <body style="height: 100vh">
-        <div style="overflow: hidden; width: 100%; height: 100%;">
-            <svg id="animation-widget" version="1.1" style="border: 2px solid black" class="svg-container" viewBox="0, 0, 1500, 900" xmlns="http://www.w3.org/2000/svg">
-                <circle id="outer-circle" cx="1000" cy="450" r="262.5" fill="var(--color-white)" stroke="var(--color-outer-circle-stroke)" stroke-width="12"/>   
+  <head>
+    <title>Cloud M - SVG Animation Widget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <script src="../javascript/scripts.js"></script>
+  </head>
+  <body style="height: 100vh">
+    <div style="overflow: hidden; width: 100%; height: 100%;">
+      <svg id="animation-widget" class="svg-container" style="border: 2px solid black" version="1.1" viewBox="0, 0, 1500, 900" xmlns="http://www.w3.org/2000/svg">
+        <circle id="outer-circle" cx="1000" cy="450" r="262.5" fill="var(--color-white)" stroke="var(--color-outer-circle-stroke)" stroke-width="12" />
 
-                <!-- Joiners branch -->
-                <g>
-                    <image class="filter-joiners-branch" x="350" y="90" href="../assets/SVG/dotted-branch-left.svg" width="600"/>
-                    <image id="joiners-arrow-right" class="filter-joiners-arrow section" x="750" y="167" href="../assets/SVG/joiners-arrow-right.svg" width="45" height="45" data-section="joiners"/>
-                    <image id="migrate-arrow-right" class="filter-migrate-arrow section" x="430" y="72" href="../assets/SVG/migrate-arrow-right.svg" width="45" height="45" data-section="migrate"/>
-                    <image id="starters-arrow-right" class="filter-starters-arrow section" x="430" y="262" href="../assets/SVG/starters-arrow-right.svg" width="45" height="45" data-section="starters"/>
+        <!-- ** Circles for drawing out the branches. ** -->
+        <!-- Top branch, middle. -->
+        <g>
+          <circle class="branch-first-circle branch-circle" cx="945" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-start-circle" class="branch-circle" cx="945" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-1-circle" class="branch-circle" cx="931" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-2-circle" class="branch-circle" cx="917" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-3-circle" class="branch-circle" cx="903" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-4-circle" class="branch-circle" cx="889" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-5-circle" class="branch-circle" cx="875" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-6-circle" class="branch-circle" cx="861" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-7-circle" class="branch-circle" cx="847" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-8-circle" class="branch-circle" cx="833" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-9-circle" class="branch-circle" cx="819" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-10-circle" class="branch-circle" cx="805" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-11-circle" class="branch-circle" cx="791" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-12-circle" class="branch-circle" cx="777" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-13-circle" class="branch-circle" cx="763" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-14-circle" class="branch-circle" cx="749" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-15-circle" class="branch-circle" cx="735" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-16-circle" class="branch-circle" cx="721" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-17-circle" class="branch-circle" cx="707" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-18-circle" class="branch-circle" cx="693" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-19-circle" class="branch-circle" cx="679" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-20-circle" class="branch-circle" cx="665" cy="188" r="4.5"/>
+          <circle id="top-branch-middle-21-circle" class="branch-circle" cx="651" cy="188" r="4.5"/>
+        </g>
+        <!-- Top branch, upper part. -->
+        <g>
+          <circle id="top-branch-upper-start-circle" class="branch-circle" cx="637" cy="188" r="4.5"/>
+          <circle id="top-branch-upper-1-circle" class="branch-circle" cx="627" cy="178" r="4.5"/>
+          <circle id="top-branch-upper-2-circle" class="branch-circle" cx="617" cy="168" r="4.5"/>
+          <circle id="top-branch-upper-3-circle" class="branch-circle" cx="607" cy="158" r="4.5"/>
+          <circle id="top-branch-upper-4-circle" class="branch-circle" cx="597" cy="148" r="4.5"/>
+          <circle id="top-branch-upper-5-circle" class="branch-circle" cx="587" cy="138" r="4.5"/>
+          <circle id="top-branch-upper-6-circle" class="branch-circle" cx="577" cy="128" r="4.5"/>
+          <circle id="top-branch-upper-7-circle" class="branch-circle" cx="567" cy="118" r="4.5"/>
+          <circle id="top-branch-upper-8-circle" class="branch-circle" cx="557" cy="108" r="4.5"/>
+          <circle id="top-branch-upper-9-circle" class="branch-circle" cx="547" cy="98" r="4.5"/>
+          <circle id="top-branch-upper-10-circle" class="branch-circle" cx="535" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-11-circle" class="branch-circle" cx="521" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-12-circle" class="branch-circle" cx="507" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-13-circle" class="branch-circle" cx="493" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-14-circle" class="branch-circle" cx="479" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-15-circle" class="branch-circle" cx="465" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-16-circle" class="branch-circle" cx="451" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-17-circle" class="branch-circle" cx="437" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-18-circle" class="branch-circle" cx="423" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-19-circle" class="branch-circle" cx="409" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-20-circle" class="branch-circle" cx="395" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-21-circle" class="branch-circle" cx="381" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-22-circle" class="branch-circle" cx="367" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-23-circle" class="branch-circle" cx="353" cy="93" r="4.5"/>
+          <circle id="top-branch-upper-24-circle" class="branch-circle" cx="339" cy="93" r="4.5"/>
+        </g>
+          <!-- Top branch, lower part. -->
+        <g>
+          <circle id="top-branch-lower-start-circle" class="branch-circle" cx="637" cy="188" r="4.5"/>
+          <circle id="top-branch-lower-1-circle" class="branch-circle" cx="627" cy="198" r="4.5"/>
+          <circle id="top-branch-lower-2-circle" class="branch-circle" cx="617" cy="208" r="4.5"/>
+          <circle id="top-branch-lower-3-circle" class="branch-circle" cx="607" cy="218" r="4.5"/>
+          <circle id="top-branch-lower-4-circle" class="branch-circle" cx="597" cy="228" r="4.5"/>
+          <circle id="top-branch-lower-5-circle" class="branch-circle" cx="587" cy="238" r="4.5"/>
+          <circle id="top-branch-lower-6-circle" class="branch-circle" cx="577" cy="248" r="4.5"/>
+          <circle id="top-branch-lower-7-circle" class="branch-circle" cx="567" cy="258" r="4.5"/>
+          <circle id="top-branch-lower-8-circle" class="branch-circle" cx="557" cy="268" r="4.5"/>
+          <circle id="top-branch-lower-9-circle" class="branch-circle" cx="547" cy="278" r="4.5"/>
+          <circle id="top-branch-lower-10-circle" class="branch-circle" cx="535" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-11-circle" class="branch-circle" cx="521" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-12-circle" class="branch-circle" cx="507" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-13-circle" class="branch-circle" cx="493" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-14-circle" class="branch-circle" cx="479" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-15-circle" class="branch-circle" cx="465" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-16-circle" class="branch-circle" cx="451" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-17-circle" class="branch-circle" cx="437" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-18-circle" class="branch-circle" cx="423" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-19-circle" class="branch-circle" cx="409" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-20-circle" class="branch-circle" cx="395" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-21-circle" class="branch-circle" cx="381" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-22-circle" class="branch-circle" cx="367" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-23-circle" class="branch-circle" cx="353" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-24-circle" class="branch-circle" cx="339" cy="283" r="4.5"/>
+          <circle id="top-branch-lower-25-circle" class="branch-circle" cx="339" cy="283" r="4.5"/>
+        </g>
+          <!-- Bottom branch, middle. -->
+        <g>
+          <circle class="branch-circle" cx="945" cy="188" r="4.5"/>
+        </g>
+          <!-- Botom branch, upper part. -->
+        <g>
+          <circle class="branch-circle" cx="945" cy="188" r="4.5"/>
+        </g>
+        <!-- Bottom branch, lower part. -->
+        <g>
+          <circle class="branch-circle" cx="945" cy="188" r="4.5"/>
+        </g>
 
-                    <circle id="migrate-pulse-unfocused" cx="315" cy="90" fill="var(--color-migrate-pulse)" r="0" stroke="var(--color-migrate-pulse)" stroke-width="2" fill="white">
-                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
-                    </circle>
-                    <g id="migrate-group">
-                        <circle cx="315" cy="90" class="circle-background" r="50"></circle>
-                        <a id="migrate-circle-link" href="/">
-                            <image id="migrate-circle" x="265" y="40" class="clickable zoom-anchor filter-migrate-circle section" href="../assets/SVG/migrate-circle.svg" width="100" height="100" data-zoom-origin="migrate-zoom" data-section="migrate"/>
-                        </a>
-                        <image id="migrate-back-button" class="back-button clickable migrate-back-button" x="230" y="40" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
-                        <a id="migrate-title-link" href="/">
-                            <text x="250" y="103" id="migrate-title" class="outer-circle-title clickable section right-align-torigin zoom-anchor" fill="var(--color-migrate-title)" data-section="migrate" data-zoom-origin="migrate-zoom" text-anchor="end">Migrate</text>
-                        </a>
-                        <a id="migrate-link-1" class="svg-anchor" href="/">
-                            <text id="migrate-text-link1" x="250" y="130" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">File & Email</text>
-                        </a>
-                        <a id="migrate-link-2" class="svg-anchor" href="/">
-                            <text id="migrate-text-link2" x="250" y="160" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Mergers & Acquisition</text>
-                        </a>
-                        <a id="migrate-link-3" class="svg-anchor" href="/">
-                            <text id="migrate-text-link3" x="250" y="190" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Domain Consolidation</text>
-                        </a>
-                    </g>
-                    <!-- Migrate arrow animation -->
-                    <animate href="#migrate-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1s; migrateTitleAnim.begin + 1s" fill="freeze" data-display="hidden"/>
-                    <!-- Migrate text animations -->
-                    <animate href="#migrate-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="migrateCircleAnim" />
-                    <animate href="#migrate-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="migrateTitleAnim" />
-                    <animate href="#migrate-text-link1" class="start-animation" attributeName="y" from="100" to="130" dur="0.5s" begin="migrateCircleAnim.begin + 1s; migrateTitleAnim.begin + 1s" fill="freeze"/>
-                    <animate href="#migrate-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1s; migrateTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#migrate-text-link2" attributeName="y" from="130" to="160" dur="0.5s" begin="migrateCircleAnim.begin + 1.4s; migrateTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#migrate-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1.4s; migrateTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#migrate-text-link3" attributeName="y" from="160" to="190" dur="0.5s" begin="migrateCircleAnim.begin + 1.8s; migrateTitleAnim.begin + 1.8s" fill="freeze" />
-                    <animate href="#migrate-text-link3" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1.8s; migrateTitleAnim.begin + 1.8s" fill="freeze" />
+        <!-- ** Drawing Animations ** -->
+        <!-- Top branch, middle - motion animations. -->
+        <g>
+          <animateMotion id="topBranchStartAnim" dur="0.1s" href="#top-branch-middle-start-circle" fill="freeze" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-1-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.1s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-2-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.2s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-3-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.3s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-4-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.4s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-5-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.5s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-6-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.6s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-7-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.7s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-8-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.8s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-9-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.9s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-10-circle" fill="freeze" begin="topBranchStartAnim.begin + 1s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-11-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.1s" path="M0, 0 L -14 0" />
+          <animateMotion id="joinersArrowDotLocation" dur="0.1s" href="#top-branch-middle-12-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.2s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-13-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.3s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-14-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.4s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-15-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.5s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-16-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.6s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-17-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.7s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-18-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.8s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-19-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.9s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-middle-20-circle" fill="freeze" begin="topBranchStartAnim.begin + 2s" path="M0, 0 L -14 0" />
+          <animateMotion id="topBranchMiddleCirclesEndAnim" dur="0.1s" href="#top-branch-middle-21-circle" fill="freeze" begin="topBranchStartAnim.begin + 2.1s" path="M0, 0 L -14 0" />
+        </g>
+        <!-- Top branch, middle - opacity animations. -->
+        <g>
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-start-circle" fill="freeze" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-1-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-2-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-3-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.3s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-4-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-5-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.5s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-6-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.6s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-7-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.7s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-8-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.8s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-9-circle" fill="freeze" begin="topBranchStartAnim.begin + 0.9s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-10-circle" fill="freeze" begin="topBranchStartAnim.begin + 1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-11-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-12-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-13-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.3s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-14-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-15-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.5s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-16-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.6s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-17-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.7s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-18-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.8s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-19-circle" fill="freeze" begin="topBranchStartAnim.begin + 1.9s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-20-circle" fill="freeze" begin="topBranchStartAnim.begin + 2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-middle-21-circle" fill="freeze" begin="topBranchStartAnim.begin + 2.1s" />
+        </g>
+        <!-- Top branch, upper - motion animations. -->
+        <g>
+          <animateMotion id="topBranchStartAnim" dur="0.1s" begin="topBranchMiddleCirclesEndAnim.end" href="#top-branch-upper-start-circle" fill="freeze" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-1-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.1s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-2-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.2s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-3-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.3s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-4-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.4s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-5-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.5s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-6-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.6s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-7-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.7s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-8-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.8s" path="M0, 0 L -10 -10" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-9-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.9s" path="M0, 0 L -12 -5" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-10-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-11-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.1s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-12-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.2s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-13-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.3s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-14-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.4s" path="M0, 0 L -14 0" />
+          <animateMotion id="migrateArrowDotLocation" dur="0.1s" href="#top-branch-upper-15-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.5s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-16-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.6s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-17-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.7s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-18-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.8s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-19-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.9s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-20-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-21-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.1s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-22-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.2s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-upper-23-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.3s" path="M0, 0 L -14 0" />
+          <animateMotion id="migrateCircleDotLocation" dur="0.1s" href="#top-branch-upper-24-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.4s" path="M0, 0 L -14 0" />
+        </g>
+        <!-- Top branch, upper - opacity animations. -->
+        <g>
+          <animate id="topBranchStartAnim" dur="0.1s" attributeName="opacity" from="0" to="1" begin="topBranchMiddleCirclesEndAnim.end" href="#top-branch-upper-start-circle" fill="freeze" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-1-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-2-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-3-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.3s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-4-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-5-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.5s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-6-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.6s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-7-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.7s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-8-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.8s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-9-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.9s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-10-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-11-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-12-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-13-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.3s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-14-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-15-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.5s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-16-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.6s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-17-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.7s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-18-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.8s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-19-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.9s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-20-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-21-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-22-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-23-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.3s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-24-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-upper-25-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.5s" />
+        </g>
+        <!-- Top branch, lower - motion animations. -->
+        <g>
+          <animateMotion id="topBranchStartAnim" dur="0.1s" begin="topBranchMiddleCirclesEndAnim.end + 0.3s" href="#top-branch-lower-start-circle" fill="freeze" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-1-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.4s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-2-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.5s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-3-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.6s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-4-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.7s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-5-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.8s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-6-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.9s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-7-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-8-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.1s" path="M0, 0 L -10 10" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-9-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.2s" path="M0, 0 L -12 5" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-10-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.3s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-11-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.4s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-12-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.5s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-13-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.6s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-14-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.7s" path="M0, 0 L -14 0" />
+          <animateMotion id="startersArrowDotLocation" dur="0.1s" href="#top-branch-lower-15-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.8s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-16-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.9s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-17-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-18-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.1s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-19-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.2s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-20-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.3s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-21-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.4s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-22-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.5s" path="M0, 0 L -14 0" />
+          <animateMotion dur="0.1s" href="#top-branch-lower-23-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.6s" path="M0, 0 L -14 0" />
+          <animateMotion id="startersCircleDotLocation" dur="0.1s" href="#top-branch-lower-24-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.7s" path="M0, 0 L -14 0" />
+        </g>
+        <!-- Top branch, lower - opacity animations. -->
+        <g>
+          <animate id="topBranchStartAnim" dur="0.1s" attributeName="opacity" from="0" to="1" begin="topBranchMiddleCirclesEndAnim.end + 0.3s" href="#top-branch-lower-start-circle" fill="freeze" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-1-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-2-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.5s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-3-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.6s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-4-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.7s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-5-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.8s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-6-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 0.9s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-7-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-8-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-9-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-10-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.3s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-11-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-12-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.5s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-13-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.6s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-14-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.7s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-15-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.8s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-16-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 1.9s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-17-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-18-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.1s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-19-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.2s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-20-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.3s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-21-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.4s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-22-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.5s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-23-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.6s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-24-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.7s" />
+          <animate dur="0.1s" attributeName="opacity" from="0" to="1" href="#top-branch-lower-25-circle" fill="freeze" begin="topBranchMiddleCirclesEndAnim.end + 2.8s" />
+        </g>
 
-                    <circle id="starters-pulse-unfocused" cx="315" cy="282" fill="var(--color-starters-pulse)" r="0" stroke="var(--color-starters-pulse)" stroke-width="2">
-                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite" id="startersAnim"/>
-                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
-                    </circle>
+        <!-- ** Scaling / Opacity element animations ** -->
+        <!-- Top branch -->
+        <!-- Joiners arrow -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#joiners-arrow-right" fill="freeze" begin="joinersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="height" from="15" to="45" href="#joiners-arrow-right" fill="freeze" begin="joinersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="width" from="15" to="45" href="#joiners-arrow-right" fill="freeze" begin="joinersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="x" from="774" to="750" href="#joiners-arrow-right" fill="freeze" begin="joinersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="y" from="182" to="167" href="#joiners-arrow-right" fill="freeze" begin="joinersArrowDotLocation.begin" />
+        </g>
+        <!-- Migrate arrow -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#migrate-arrow-right" fill="freeze" begin="migrateArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="height" from="15" to="45" href="#migrate-arrow-right" fill="freeze" begin="migrateArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="width" from="15" to="45" href="#migrate-arrow-right" fill="freeze" begin="migrateArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="x" from="454" to="430" href="#migrate-arrow-right" fill="freeze" begin="migrateArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="y" from="87" to="72" href="#migrate-arrow-right" fill="freeze" begin="migrateArrowDotLocation.begin" />
+        </g>
+        <!-- Starters arrow -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#starters-arrow-right" fill="freeze" begin="startersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="height" from="15" to="45" href="#starters-arrow-right" fill="freeze" begin="startersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="width" from="15" to="45" href="#starters-arrow-right" fill="freeze" begin="startersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="x" from="454" to="430" href="#starters-arrow-right" fill="freeze" begin="startersArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="y" from="277" to="262" href="#starters-arrow-right" fill="freeze" begin="startersArrowDotLocation.begin" />
+        </g>
+        <!-- Migrate circle bg -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-circle-bg" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="r" from="4.5" to="50" href="#migrate-circle-bg" fill="freeze" begin="migrateCircleDotLocation.begin" />
+        </g>
+        <!-- Migrate circle -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="height" from="15" to="100" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="width" from="15" to="100" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="x" from="305" to="265" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate id="migrateCircleAnimEnd" dur="0.4s" attributeName="y" from="80" to="40" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+        </g>
+        <!-- Migrate title -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-title" fill="freeze" begin="migrateCircleAnimEnd.end" />
+          <animate dur="0.4s" attributeName="x" from="275" to="250" href="#migrate-title" fill="freeze" begin="migrateCircleAnimEnd.end" />
+        </g>
+        <!-- Starters circle bg -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#starters-circle-bg" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="r" from="4.5" to="50" href="#starters-circle-bg" fill="freeze" begin="startersCircleDotLocation.begin" />
+        </g>
+        <!-- Starters circle -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="height" from="15" to="100" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="width" from="15" to="100" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="x" from="305" to="265" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate id="startersCircleAnimEnd" dur="0.4s" attributeName="y" from="272" to="232" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+        </g>
+        <!-- Starters title -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#starters-title" fill="freeze" begin="startersCircleAnimEnd.end" />
+          <animate dur="0.3s" attributeName="x" from="275" to="250" href="#starters-title" fill="freeze" begin="startersCircleAnimEnd.end" />
+        </g>
+        <!-- Bottom branch -->
+        <!-- Grey leaving arrow arrow -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#grey-leaving-arrow-left" fill="freeze" begin="greyLeavingArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="height" from="15" to="45" href="#grey-leaving-arrow-left" fill="freeze" begin="greyLeavingArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="width" from="15" to="45" href="#grey-leaving-arrow-left" fill="freeze" begin="greyLeavingArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="x" from="774" to="750" href="#grey-leaving-arrow-left" fill="freeze" begin="greyLeavingArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="y" from="672" to="687" href="#grey-leaving-arrow-left" fill="freeze" begin="greyLeavingArrowDotLocation.begin" />
+        </g>
+        <!-- Leavers arrow -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#leavers-arrow-left" fill="freeze" begin="leaversArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="height" from="15" to="45" href="#leavers-arrow-left" fill="freeze" begin="leaversArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="width" from="15" to="45" href="#leavers-arrow-left" fill="freeze" begin="leaversArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="x" from="454" to="430" href="#leavers-arrow-left" fill="freeze" begin="leaversArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="y" from="576" to="591" href="#leavers-arrow-left" fill="freeze" begin="leaversArrowDotLocation.begin" />
+        </g>
+        <!-- Archive arrow -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#archive-arrow-left" fill="freeze" begin="archiveArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="height" from="15" to="45" href="#archive-arrow-left" fill="freeze" begin="archiveArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="width" from="15" to="45" href="#archive-arrow-left" fill="freeze" begin="archiveArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="x" from="454" to="430" href="#archive-arrow-left" fill="freeze" begin="archiveArrowDotLocation.begin" />
+          <animate dur="0.3s" attributeName="y" from="767" to="782" href="#archive-arrow-left" fill="freeze" begin="archiveArrowDotLocation.begin" />
+        </g>
+        <!-- Leavers circle bg -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-circle-bg" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="r" from="4.5" to="50" href="#migrate-circle-bg" fill="freeze" begin="migrateCircleDotLocation.begin" />
+        </g>
+        <!-- Leavers circle -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="height" from="15" to="100" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="width" from="15" to="100" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="x" from="305" to="265" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+          <animate id="migrateCircleAnimEnd" dur="0.4s" attributeName="y" from="80" to="40" href="#migrate-circle" fill="freeze" begin="migrateCircleDotLocation.begin" />
+        </g>
+        <!-- Leavers title -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-title" fill="freeze" begin="migrateCircleAnimEnd.end" />
+          <animate dur="0.4s" attributeName="x" from="275" to="250" href="#migrate-title" fill="freeze" begin="migrateCircleAnimEnd.end" />
+        </g>
+        <!-- Archive circle bg -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#starters-circle-bg" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="r" from="4.5" to="50" href="#starters-circle-bg" fill="freeze" begin="startersCircleDotLocation.begin" />
+        </g>
+        <!-- Archive circle -->
+        <g>
+          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="height" from="15" to="100" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="width" from="15" to="100" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate dur="0.4s" attributeName="x" from="305" to="265" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+          <animate id="startersCircleAnimEnd" dur="0.4s" attributeName="y" from="272" to="232" href="#starters-circle" fill="freeze" begin="startersCircleDotLocation.begin" />
+        </g>
+        <!-- Archive title -->
+        <g>
+          <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#starters-title" fill="freeze" begin="startersCircleAnimEnd.end" />
+          <animate dur="0.3s" attributeName="x" from="275" to="250" href="#starters-title" fill="freeze" begin="startersCircleAnimEnd.end" />
+        </g>
 
-                    <g id="starters-group">
-                        <circle cx="315" cy="282" class="circle-background" r="50"></circle>
-                        <a id="starters-circle-link" href="/">
-                            <image id="starters-circle" x="265" y="232" class="clickable zoom-anchor filter-starters-circle section" href="../assets/SVG/starters-circle.svg" width="100" height="100" data-zoom-origin="starters-zoom" data-section="starters"/>
-                        </a>
-                        <image id="starters-back-button" class="back-button clickable starters-back-button" x="235" y="232" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
-                        <a id="starters-title-link" href="/">
-                            <text x="250" y="294" id="starters-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-starters-title)" font-size="22px" data-section="starters" data-zoom-origin="starters-zoom" text-anchor="end">Starters</text>
-                        </a>
-                        <a id="starters-link-1" class="svg-anchor" href="/">
-                            <text id="starters-text-link1" x="250" y="320" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">HR Integration</text>
-                        </a>
-                        <a id="starters-link-2" class="svg-anchor" href="/">
-                            <text id="starters-text-link2" x="250" y="350" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">IDM Integration</text>
-                        </a>
-                        <a id="starters-link-3" class="svg-anchor" href="/">
-                            <text id="starters-text-link3" x="250" y="380" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">AD Integration</text>
-                        </a>
-                    </g>
+        <!-- Joiners branch -->
+        <g>
+          <!-- <image class="filter-joiners-branch" x="350" y="90" href="../assets/SVG/dotted-branch-left.svg" width="600" /> -->
+          <image id="joiners-arrow-right" class="filter-joiners-arrow section opacity-none" x="774" y="182" href="../assets/SVG/joiners-arrow-right.svg" width="15" height="15" data-section="joiners" />
+          <image id="migrate-arrow-right" class="filter-migrate-arrow section opacity-none" x="406" y="72" href="../assets/SVG/migrate-arrow-right.svg" width="15" height="15" data-section="migrate" />
+          <image id="starters-arrow-right" class="filter-starters-arrow section opacity-none" x="430" y="262" href="../assets/SVG/starters-arrow-right.svg" width="15" height="15" data-section="starters" />
 
-                    <!-- Starters arrow animation -->
-                    <animate href="#starters-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1s; startersTitleAnim.begin + 1s" fill="freeze" data-display="hidden"/>
-                    <!-- Starters text animations -->
-                    <animate href="#starters-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="startersCircleAnim" />
-                    <animate href="#starters-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="startersTitleAnim" />
-                    <animate href="#starters-text-link1" class="start-animation" attributeName="y" from="290" to="320" dur="0.5s" begin="startersCircleAnim.begin + 1s; startersTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#starters-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1s; startersTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#starters-text-link2" attributeName="y" from="320" to="350" dur="0.5s" begin="startersCircleAnim.begin + 1.4s; startersTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#starters-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1.4s; startersTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#starters-text-link3" attributeName="y" from="350" to="380" dur="0.5s" begin="startersCircleAnim.begin + 1.8s; startersTitleAnim.begin + 1.8s" fill="freeze" />
-                    <animate href="#starters-text-link3" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1.8s; startersTitleAnim.begin + 1.8s" fill="freeze" />
-                </g>   
-                <!-- Movers branch -->
-                <g>
-                    <image x="350" y="610" class="clickable filter-movers-branch" href="../assets/SVG/dotted-branch-left.svg" width="600"/>
-                    <image x="750" y="687" class="clickable filter-grey-leaving-arrow section" href="../assets/SVG/grey-leaving-arrow-left.svg" width="45" height="45" data-section="grey-leaving"/>
-                    <image x="430" y="591" class="clickable filter-leavers-arrow section" href="../assets/SVG/leavers-arrow-left.svg" width="45" height="45" data-section="leavers"/>
-                    <image x="430" y="782" class="clickable filter-archive-arrow section" href="../assets/SVG/archive-arrow-left.svg" width="45" height="45" data-section="archive"/>
+          <!-- Peg the begin to the animation for when the circle is finished -->
+          <!-- <circle id="migrate-pulse-unfocused" cx="315" cy="90" fill="var(--color-migrate-pulse)" r="0" stroke="var(--color-migrate-pulse)" stroke-width="2" fill="white">
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite" /> 
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite" />
+          </circle> -->
 
-                    <circle cx="315" cy="613" fill="var(--color-leavers-pulse)" r="0" stroke="var(--color-leavers-pulse)" stroke-width="2">
-                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
-                    </circle>
-
-                    <g id="leavers-group">
-                        <circle cx="315" cy="613" class="circle-background" r="50"></circle>
-                        <a id="leavers-circle-link" href="/">
-                            <image id="leavers-circle" x="265" y="563" class="clickable zoom-anchor filter-leavers-circle section" href="../assets/SVG/leavers-circle.svg" width="100" height="100" data-zoom-origin="leavers-zoom" data-section="leavers"/>
-                        </a>
-                        <image id="leavers-back-button" class="back-button clickable leavers-back-button" x="235" y="563" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
-                        <a id="leavers-title-link" href="/">
-                            <text x="250" y="623" id="leavers-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-leavers-title)" font-size="22px" data-section="leavers" data-zoom-origin="leavers-zoom" text-anchor="end">Leavers</text>
-                        </a>
-                        <a id="leavers-link-1" class="svg-anchor" href="/">
-                            <text id="leavers-text-link1" x="250" y="650" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end" data-display="hidden">Revoke Access</text>
-                        </a>
-                        <a id="leavers-link-2" class="svg-anchor" href="/">
-                            <text id="leavers-text-link2" x="250" y="680" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end" data-display="hidden">Migrate Emails</text>
-                        </a>
-                    </g>
-                    
-                    <!-- Leavers arrow animation -->
-                    <animate href="#leavers-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1s; leaversTitleAnim.begin + 1s" fill="freeze" data-display="hidden"/>
-                    <!-- Leavers text animations -->
-                    <animate href="#leavers-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="leaversCircleAnim" />
-                    <animate href="#leavers-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="leaversTitleAnim" />
-                    <animate href="#leavers-text-link1" class="start-animation" attributeName="y" from="620" to="650" dur="0.5s" begin="leaversCircleAnim.begin + 1s; leaversTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#leavers-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1s; leaversTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#leavers-text-link2" attributeName="y" from="650" to="680" dur="0.5s" begin="leaversCircleAnim.begin + 1.4s; leaversTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#leavers-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1.4s; leaversTitleAnim.begin + 1.4s" fill="freeze" />
-
-                    <circle cx="315" cy="803" fill="var(--color-archive-pulse)" r="0" stroke="var(--color-archive-pulse)" stroke-width="2">
-                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
-                    </circle>
-
-                    <g id="archive-group">
-                        <circle cx="315" cy="803" class="circle-background" r="50"></circle>
-                        <a id="archive-circle-link" href="/">
-                            <image id="archive-circle" x="265" y="753" class="clickable zoom-anchor filter-archive-circle section" href="../assets/SVG/archive-circle.svg" width="100" height="100" data-zoom-origin="archive-zoom" data-section="archive"/>
-                        </a>
-                        <image id="archive-back-button" class="back-button clickable archive-back-button" x="235" y="753" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
-                        <a id="archive-title-link" href="/">
-                            <text x="250" y="813" id="archive-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-archive-title)" data-section="archive" data-zoom-origin="archive-zoom" text-anchor="end">Archive</text>
-                        </a>
-                        <a id="" class="svg-anchor" href="/">
-                            <text id="archive-text-link1" x="250" y="840" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end" data-display="hidden">Archive Data</text>
-                        </a>
-                        <a id="" class="svg-anchor" href="/">
-                            <text id="archive-text-link2" x="250" y="870" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end" data-display="hidden">Search And Restore</text>
-                        </a>
-                    </g>
-
-                    <!-- Archive arrow animation -->
-                    <animate href="#archive-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="archiveCircleAnim.begin + 1s; archiveTitleAnim.begin + 1s" fill="freeze" />
-                    <!-- Archive text animations -->
-                    <animate href="#archive-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="archiveCircleAnim" />
-                    <animate href="#archive-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="archiveTitleAnim" />
-                    <animate href="#archive-text-link1" class="start-animation" attributeName="y" from="810" to="840" dur="0.5s" begin="archiveCircleAnim.begin + 1s; archiveTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#archive-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="archiveCircleAnim.begin + 1s; archiveTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#archive-text-link2" attributeName="y" from="840" to="870" dur="0.5s" begin="archiveCircleAnim.begin + 1.4s; archiveTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#archive-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="archiveCircleAnim.begin + 1.4s; archiveTitleAnim.begin + 1.4s" fill="freeze" />
-                </g>  
-                <!-- Inner circle -->
-                <g>
-                    <circle id="inner-circle" cx="1000" cy="450" r="150" fill="var(--color-inner-circle)" />
-                    <image id="two-way-dotted-arrow" class="filter-inner-circle-arrow section" x="971.5" y="421.5" class="clickable" href="../assets/SVG/two-way-dotted-arrow.svg" width="57" height="57"/>
-                    <a id="google-link" href="/">
-                        <image id="google-logo" x="862.5" y="412.5" class="clickable section" href="../assets/SVG/google-logo.svg" width="75" height="75"/>
-                    </a>
-                    <a id="microsoft365-link" class="filter-microsoft365-logo" href="/">
-                        <image id="microsoft365-logo" x="1062.5" y="412.5" class="clickable section" href="../assets/SVG/microsoft365-logo.svg" width="75" height="75"/>
-                    </a>
-                    <a id="inner-circle-text-link" class="svg-anchor" href="/">
-                        <text id="vendor-lockin-text" x="920.2" y="525" class="clickable section link-hover" fill="var(--color-inner-circle-text)" font-size="16px" font-weight="bold">Avoid vendor lock in</text>
-                    </a>
-                </g>
-                <!-- Outer circle -->
-                <g>
-                    <circle cx="740" cy="450" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
-                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                    </circle>
-
-                    <g id="movers-group">
-                        <circle cx="740" cy="450" class="circle-background" r="50"></circle>
-                        <image id="movers-circle" x="690" y="400" class="clickable zoom-anchor filter-movers-circle section" href="../assets/SVG/movers-circle.svg" width="100" height="100" data-zoom-origin="movers-zoom" data-section="movers"/>
-                        <image id="movers-back-button" class="back-button clickable outer-circle-back-button" x="655" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
-                        <a href="movers-title-link">
-                            <text x="675" y="461" id="movers-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-inner-circle-title)" data-section="movers" data-zoom-origin="movers-zoom" text-anchor="end">Movers</text>
-                        </a>
-                        <a id="movers-link1" class="svg-anchor">
-                            <text id="movers-text-link1" x="675" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="end" data-display="hidden">Least Privilege Access</text>
-                        </a>
-                    </g>
-
-                     <!-- Movers arrow animation -->
-                    <animate href="#movers-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="moversCircleAnim.begin + 1s; moversTitleAnim.begin + 1s" fill="freeze" />
-                     <!-- Movers text animations -->
-                    <animate href="#movers-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="moversCircleAnim" />
-                    <animate href="#movers-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="moversTitleAnim" />
-                    <animate href="#movers-text-link1" class="start-animation" attributeName="y" from="465" to="485" dur="0.5s" begin="moversCircleAnim.begin + 1s; moversTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#movers-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="moversCircleAnim.begin + 1s; moversTitleAnim.begin + 1s" fill="freeze" />
-
-                    <circle id="joiners-pulse-unfocused" cx="1000" cy="190" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
-                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                    </circle>
-
-                    <g id="joiners-group">
-                        <circle cx="1000" cy="190" class="circle-background" r="50"></circle>
-                        <image id="joiners-circle" x="950" y="140" class="clickable zoom-anchor filter-joiners-circle section" href="../assets/SVG/joiners-circle.svg" width="100" height="100" data-zoom-origin="joiners-zoom" data-section="joiners"/>
-                        <image id="joiners-back-button" class="back-button clickable outer-circle-back-button" x="1050" y="140" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
-                        <a id="joiners-title-link" href="">
-                            <text id="joiners-title" x="1000" y="128" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-inner-circle-title)" data-section="joiners" data-zoom-origin="joiners-zoom" text-anchor="middle">Joiners</text>
-                        </a>
-                        <a id="" class="svg-anchor" href="/">
-                            <text id="joiners-text-link1" x="1000" y="35" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">Files/Folder/Calendar</text>
-                        </a>
-                        <a id="" class="svg-anchor" href="/">
-                            <text id="joiners-text-link2" x="1000" y="65" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">Email Signatures</text>
-                        </a>
-                        <a id="" class="svg-anchor" href="/">
-                            <text id="joiners-text-link3" x="1000" y="95" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">SaaS License Management</text>
-                        </a>
-                    </g>
-
-                    <animate href="#joiners-circle" attributeName="width" from="100" to="100" dur="0.1s" begin="click" id="joinersCircleAnim" fill="freeze" />
-                    <animate href="#joiners-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="joinersTitleAnim" />
-
-                    <!-- Joiners arrow animations -->
-                    <animate href="#joiners-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1s; joinersTitleAnim.begin + 1s" fill="freeze" />
-                    <!-- Joiners text animations -->
-                    <animate href="#joiners-text-link3" class="start-animation" attributeName="y" from="125" to="95" dur="0.5s" begin="joinersCircleAnim.begin + 1s; joinersTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#joiners-text-link3" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1s; joinersTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#joiners-text-link2" attributeName="y" from="95" to="65" dur="0.5s" begin="joinersCircleAnim.begin + 1.4s; joinersTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#joiners-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1.4s; joinersTitleAnim.begin + 1.4s" fill="freeze" />
-                    <animate href="#joiners-text-link1" attributeName="y" from="65" to="35" dur="0.5s" begin="joinersCircleAnim.begin + 1.8s; joinersTitleAnim.begin + 1.8s" fill="freeze" />
-                    <animate href="#joiners-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1.8s; joinersTitleAnim.begin + 1.8s" fill="freeze" />
-
-                    <circle cx="1260" cy="450" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-category)" stroke-width="2">
-                        <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite"/>
-                    </circle>
-
-                    <g id="automate-group">
-                        <circle cx="1260" cy="450" class="circle-background" r="50"></circle>
-                        <image id="automate-circle" x="1210" y="400" class="clickable zoom-anchor filter-automate-circle section" href="../assets/SVG/automate-circle.svg" width="100" height="100" data-zoom-origin="automate-zoom" data-section="automate"/>
-                        <image id="automate-back-button" class="back-button clickable outer-circle-back-button" x="1310" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden"/>
-                        <a id="automate-title-link">
-                            <text x="1327" y="460" id="automate-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-inner-circle-title)" data-section="automate" data-zoom-origin="automate-zoom">Automate</text>
-                        </a>
-                        <a id="" class="svg-anchor" href="/">
-                            <text id="automate-text-link1" x="1326" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)" data-display="hidden">Smart Teams</text>
-                        </a>
-                    </g>
-                    <!-- Automate arrow animation -->
-                    <animate href="#automate-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="automateCircleAnim.begin + 1s; automateTitleAnim.begin + 1s" fill="freeze" />
-                    <!-- Automate text animations -->
-                    <animate href="#automate-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="automateCircleAnim" />
-                    <animate href="#automate-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="automateTitleAnim" />
-                    <animate href="#automate-text-link1" class="start-animation" attributeName="y" from="455" to="485" dur="0.5s" begin="automateCircleAnim.begin + 1s; automateTitleAnim.begin + 1s" fill="freeze" />
-                    <animate href="#automate-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="automateCircleAnim.begin + 1s; automateTitleAnim.begin + 1s" fill="freeze" />
-                </g>
-
-                <g>
-                    <!-- Animations for zooming in -->
-
-
-
-                    <!-- ** Animations for zooming out. ** -->
-                    <!-- Movers animations zoom out -->
-                    <animate href="#movers-back-button" id="moversZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
-                    <animate href="#movers-text-link1" attributeName="y" from="485" to="465" dur="0.5s" begin="moversZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#movers-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="moversZoomOutAnim.begin + 0.5s" fill="freeze" />
-
-                    <!-- Joiners animations zoom out -->
-                    <animate href="#joiners-back-button" id="joinersZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
-                    <animate href="#joiners-text-link1" attributeName="y" from="35" to="65" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#joiners-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#joiners-text-link2" attributeName="y" from="65" to="95" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#joiners-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#joiners-text-link3" attributeName="y" from="95" to="125" dur="0.5s" begin="joinersZoomOutAnim.begin + 1.3s" fill="freeze" />
-                    <animate href="#joiners-text-link3" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 1.3s" fill="freeze" />
-
-                    <!-- Automate animations zoom out -->
-                    <animate href="#automate-back-button" id="automateZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
-                    <animate href="#automate-text-link1" attributeName="y" from="485" to="455" dur="0.5s" begin="automateZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#automate-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="automateZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <!-- Migrate animations zoom out -->
-                    <animate href="#migrate-back-button" id="migrateZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
-                    <animate href="#migrate-text-link3" attributeName="y" from="190" to="160" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#migrate-text-link3" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#migrate-text-link2" attributeName="y" from="160" to="130" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#migrate-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#migrate-text-link1" attributeName="y" from="130" to="100" dur="0.5s" begin="migrateZoomOutAnim.begin + 1.3s" fill="freeze" />
-                    <animate href="#migrate-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 1.3s" fill="freeze" />
-
-                    <!-- Starters animations zoom out -->
-                    <animate href="#starters-back-button" id="startersZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
-                    <animate href="#starters-text-link3" attributeName="y" from="380" to="350" dur="0.5s" begin="startersZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#starters-text-link3" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#starters-text-link2" attributeName="y" from="350" to="320" dur="0.5s" begin="startersZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#starters-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#starters-text-link1" attributeName="y" from="320" to="290" dur="0.5s" begin="startersZoomOutAnim.begin + 1.3s" fill="freeze" />
-                    <animate href="#starters-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 1.3s" fill="freeze" />
-
-   
-                    <!-- Leavers animations zoom out -->
-                    <animate href="#leavers-back-button" id="leaversZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
-                    <animate href="#leavers-text-link2" attributeName="y" from="680" to="650" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#leavers-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#leavers-text-link1" attributeName="y" from="650" to="620" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#leavers-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.9s" fill="freeze" />
-
-                    <!-- Archive animations zoom out -->
-                    <animate href="#archive-back-button" id="archiveZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
-                    <animate href="#archive-text-link2" attributeName="y" from="870" to="840" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#archive-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.5s" fill="freeze" />
-                    <animate href="#archive-text-link1" attributeName="y" from="840" to="810" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.9s" fill="freeze" />
-                    <animate href="#archive-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.9s" fill="freeze" />
-                </g>
-
-                <!-- ** Paths for use in draw animation ** -->
-                <!-- <path id="top-branch-draw" d="M928 191 L 929 191 L 914 195 L 426 402 L 0 402 L 0 0 L 928 0 Z" fill="white"></path>
-
-                <animate href="#top-branch-draw" attributeName="x" from="928" to="-900" dur="3s" begin="0s" fill="freeze" /> -->
-            </svg>
-        </div>
-
-        <script>
-            // window.onload = (event) => {
-            //     document.getElementById('joiners-circle').onclick = function useFocusPulse() {
-            //         document.getElementById('joiners-pulse-unfocused').classList.add('hidden')
-            //         document.getElementById('migrate-pulse-unfocused').classList.add('hidden')
-            //         document.getElementById('starters-pulse-unfocused').classList.add('hidden')
-            //         setTimeout(function () {
-            //             document.getElementById('joiners-pulse-focused').classList.add('unhide')
-            //             document.getElementById('migrate-pulse-focused').classList.add('unhide')
-            //             document.getElementById('starters-pulse-focused').classList.add('unhide')
-            //         }, 750)
-            //     }
-            // }
-        </script>
-    </body>
+          <g id="migrate-group">
+            <circle id="migrate-circle-bg" cx="315" cy="90" class="circle-background opacity-none" r="4.5"></circle>
+            <a id="migrate-circle-link" href="/">
+              <image id="migrate-circle" x="265" y="40" class="clickable zoom-anchor filter-migrate-circle section opacity-none" href="../assets/SVG/migrate-circle.svg" width="15" height="15" data-zoom-origin="migrate-zoom" data-section="migrate" />
+            </a>
+            <image id="migrate-back-button" class="back-button clickable migrate-back-button" x="230" y="40" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden" />
+            <a id="migrate-title-link" href="/">
+              <text x="250" y="103" id="migrate-title" class="outer-circle-title clickable section right-align-torigin zoom-anchor opacity-none" fill="var(--color-migrate-title)" data-section="migrate" data-zoom-origin="migrate-zoom" text-anchor="end">Migrate</text>
+            </a>
+            <a id="migrate-link-1" class="svg-anchor" href="/">
+              <text id="migrate-text-link1" x="250" y="130" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">File & Email</text>
+            </a>
+            <a id="migrate-link-2" class="svg-anchor" href="/">
+              <text id="migrate-text-link2" x="250" y="160" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Mergers & Acquisition</text>
+            </a>
+            <a id="migrate-link-3" class="svg-anchor" href="/">
+              <text id="migrate-text-link3" x="250" y="190" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Domain Consolidation</text>
+            </a>
+          </g>
+          <!-- <circle id="starters-pulse-unfocused" cx="315" cy="282" fill="var(--color-starters-pulse)" r="0" stroke="var(--color-starters-pulse)" stroke-width="2">
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite" id="startersAnim" />
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite" />
+          </circle> -->
+          <g id="starters-group">
+            <circle id="starters-circle-bg" cx="315" cy="282" class="circle-background opacity-none" r="4.5"></circle>
+            <a id="starters-circle-link" href="/">
+              <image id="starters-circle" x="265" y="232" class="clickable zoom-anchor filter-starters-circle section opacity-none" href="../assets/SVG/starters-circle.svg" width="15" height="15" data-zoom-origin="starters-zoom" data-section="starters" />
+            </a>
+            <image id="starters-back-button" class="back-button clickable starters-back-button" x="235" y="232" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden" />
+            <a id="starters-title-link" href="/">
+              <text x="250" y="294" id="starters-title" class="outer-circle-title clickable section zoom-anchor opacity-none" fill="var(--color-starters-title)" font-size="22px" data-section="starters" data-zoom-origin="starters-zoom" text-anchor="end">Starters</text>
+            </a>
+            <a id="starters-link-1" class="svg-anchor" href="/">
+              <text id="starters-text-link1" x="250" y="320" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">HR Integration</text>
+            </a>
+            <a id="starters-link-2" class="svg-anchor" href="/">
+              <text id="starters-text-link2" x="250" y="350" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">IDM Integration</text>
+            </a>
+            <a id="starters-link-3" class="svg-anchor" href="/">
+              <text id="starters-text-link3" x="250" y="380" class="text-link clickable" fill="var(--color-starters-link)" text-anchor="end" data-display="hidden">AD Integration</text>
+            </a>
+          </g>
+        </g>
+        <!-- Movers branch -->
+        <g>
+          <!-- <image x="350" y="610" class="clickable filter-movers-branch" href="../assets/SVG/dotted-branch-left.svg" width="600" /> -->
+          <image id="grey-leaving-arrow-left" x="750" y="687" class="clickable filter-grey-leaving-arrow section" href="../assets/SVG/grey-leaving-arrow-left.svg" width="45" height="45" data-section="grey-leaving" />
+          <image id="leavers-arrow-left" x="430" y="591" class="clickable filter-leavers-arrow section" href="../assets/SVG/leavers-arrow-left.svg" width="45" height="45" data-section="leavers" />
+          <image id="archive-arrow-left" x="430" y="782" class="clickable filter-archive-arrow section" href="../assets/SVG/archive-arrow-left.svg" width="45" height="45" data-section="archive" />
+          <circle cx="315" cy="613" fill="var(--color-leavers-pulse)" r="0" stroke="var(--color-leavers-pulse)" stroke-width="2">
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="1.7s" repeatCount="indefinite" />
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite" />
+          </circle>
+          <g id="leavers-group">
+            <circle cx="315" cy="613" class="circle-background" r="50"></circle>
+            <a id="leavers-circle-link" href="/">
+              <image id="leavers-circle" x="265" y="563" class="clickable zoom-anchor filter-leavers-circle section" href="../assets/SVG/leavers-circle.svg" width="100" height="100" data-zoom-origin="leavers-zoom" data-section="leavers" />
+            </a>
+            <image id="leavers-back-button" class="back-button clickable leavers-back-button" x="235" y="563" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden" />
+            <a id="leavers-title-link" href="/">
+              <text x="250" y="623" id="leavers-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-leavers-title)" font-size="22px" data-section="leavers" data-zoom-origin="leavers-zoom" text-anchor="end">Leavers</text>
+            </a>
+            <a id="leavers-link-1" class="svg-anchor" href="/">
+              <text id="leavers-text-link1" x="250" y="650" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end" data-display="hidden">Revoke Access</text>
+            </a>
+            <a id="leavers-link-2" class="svg-anchor" href="/">
+              <text id="leavers-text-link2" x="250" y="680" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end" data-display="hidden">Migrate Emails</text>
+            </a>
+          </g>
+          <circle cx="315" cy="803" fill="var(--color-archive-pulse)" r="0" stroke="var(--color-archive-pulse)" stroke-width="2">
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="1.7s" repeatCount="indefinite" />
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="1.7s" repeatCount="indefinite" />
+          </circle>
+          <g id="archive-group">
+            <circle cx="315" cy="803" class="circle-background" r="50"></circle>
+            <a id="archive-circle-link" href="/">
+              <image id="archive-circle" x="265" y="753" class="clickable zoom-anchor filter-archive-circle section" href="../assets/SVG/archive-circle.svg" width="100" height="100" data-zoom-origin="archive-zoom" data-section="archive" />
+            </a>
+            <image id="archive-back-button" class="back-button clickable archive-back-button" x="235" y="753" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden" />
+            <a id="archive-title-link" href="/">
+              <text x="250" y="813" id="archive-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-archive-title)" data-section="archive" data-zoom-origin="archive-zoom" text-anchor="end">Archive</text>
+            </a>
+            <a id="" class="svg-anchor" href="/">
+              <text id="archive-text-link1" x="250" y="840" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end" data-display="hidden">Archive Data</text>
+            </a>
+            <a id="" class="svg-anchor" href="/">
+              <text id="archive-text-link2" x="250" y="870" class="text-link clickable" fill="var(--color-archive-link)" text-anchor="end" data-display="hidden">Search And Restore</text>
+            </a>
+          </g>
+        </g>
+        <!-- Inner circle -->
+        <g>
+          <circle id="inner-circle" cx="1000" cy="450" r="150" fill="var(--color-inner-circle)" />
+          <image id="two-way-dotted-arrow" class="filter-inner-circle-arrow section" x="971.5" y="421.5" class="clickable" href="../assets/SVG/two-way-dotted-arrow.svg" width="57" height="57" />
+          <a id="google-link" href="/">
+            <image id="google-logo" x="862.5" y="412.5" class="clickable section" href="../assets/SVG/google-logo.svg" width="75" height="75" />
+          </a>
+          <a id="microsoft365-link" class="filter-microsoft365-logo" href="/">
+            <image id="microsoft365-logo" x="1062.5" y="412.5" class="clickable section" href="../assets/SVG/microsoft365-logo.svg" width="75" height="75" />
+          </a>
+          <a id="inner-circle-text-link" class="svg-anchor" href="/">
+            <text id="vendor-lockin-text" x="920.2" y="525" class="clickable section link-hover" fill="var(--color-inner-circle-text)" font-size="16px" font-weight="bold">Avoid vendor lock in</text>
+          </a>
+        </g>
+        <!-- Outer circle -->
+        <g>
+          <circle cx="740" cy="450" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite" />
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite" />
+          </circle>
+          <g id="movers-group">
+            <circle cx="740" cy="450" class="circle-background" r="50"></circle>
+            <image id="movers-circle" x="690" y="400" class="clickable zoom-anchor filter-movers-circle section" href="../assets/SVG/movers-circle.svg" width="100" height="100" data-zoom-origin="movers-zoom" data-section="movers" />
+            <image id="movers-back-button" class="back-button clickable outer-circle-back-button" x="655" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden" />
+            <a href="movers-title-link">
+              <text x="675" y="461" id="movers-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-inner-circle-title)" data-section="movers" data-zoom-origin="movers-zoom" text-anchor="end">Movers</text>
+            </a>
+            <a id="movers-link1" class="svg-anchor">
+              <text id="movers-text-link1" x="675" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="end" data-display="hidden">Least Privilege Access</text>
+            </a>
+          </g>
+          <circle id="joiners-pulse-unfocused" cx="1000" cy="190" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-pulse)" stroke-width="2">
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite" />
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite" />
+          </circle>
+          <g id="joiners-group">
+            <circle cx="1000" cy="190" class="circle-background" r="50"></circle>
+            <image id="joiners-circle" x="950" y="140" class="clickable zoom-anchor filter-joiners-circle section" href="../assets/SVG/joiners-circle.svg" width="100" height="100" data-zoom-origin="joiners-zoom" data-section="joiners" />
+            <image id="joiners-back-button" class="back-button clickable outer-circle-back-button" x="1050" y="140" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden" />
+            <a id="joiners-title-link" href="">
+              <text id="joiners-title" x="1000" y="128" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-inner-circle-title)" data-section="joiners" data-zoom-origin="joiners-zoom" text-anchor="middle">Joiners</text>
+            </a>
+            <a id="" class="svg-anchor" href="/">
+              <text id="joiners-text-link1" x="1000" y="35" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">Files/Folder/Calendar</text>
+            </a>
+            <a id="" class="svg-anchor" href="/">
+              <text id="joiners-text-link2" x="1000" y="65" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">Email Signatures</text>
+            </a>
+            <a id="" class="svg-anchor" href="/">
+              <text id="joiners-text-link3" x="1000" y="95" class="text-link clickable" fill="var(--color-outer-circle-link)" text-anchor="middle" data-display="hidden">SaaS License Management</text>
+            </a>
+          </g>
+          <circle cx="1260" cy="450" fill="var(--color-inner-circle-pulse)" r="0" stroke="var(--color-inner-circle-category)" stroke-width="2">
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0s" repeatCount="indefinite" />
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0s" repeatCount="indefinite" />
+          </circle>
+          <g id="automate-group">
+            <circle cx="1260" cy="450" class="circle-background" r="50"></circle>
+            <image id="automate-circle" x="1210" y="400" class="clickable zoom-anchor filter-automate-circle section" href="../assets/SVG/automate-circle.svg" width="100" height="100" data-zoom-origin="automate-zoom" data-section="automate" />
+            <image id="automate-back-button" class="back-button clickable outer-circle-back-button" x="1310" y="400" class="clickable" href="../assets/SVG/back-arrow.svg" width="30" height="30" data-display="hidden" />
+            <a id="automate-title-link">
+              <text x="1327" y="460" id="automate-title" class="outer-circle-title clickable section zoom-anchor" fill="var(--color-inner-circle-title)" data-section="automate" data-zoom-origin="automate-zoom">Automate</text>
+            </a>
+            <a id="" class="svg-anchor" href="/">
+              <text id="automate-text-link1" x="1326" y="485" class="text-link clickable" fill="var(--color-outer-circle-link)" data-display="hidden">Smart Teams</text>
+            </a>
+          </g>
+        </g>
+        <g>
+          <!-- Animations for zooming in -->
+          <!-- Movers animations zoom in -->
+          <animate href="#movers-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="moversCircleAnim.begin + 1s; moversTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#movers-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="moversCircleAnim" />
+          <animate href="#movers-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="moversTitleAnim" />
+          <animate href="#movers-text-link1" class="start-animation" attributeName="y" from="465" to="485" dur="0.5s" begin="moversCircleAnim.begin + 1s; moversTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#movers-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="moversCircleAnim.begin + 1s; moversTitleAnim.begin + 1s" fill="freeze" />
+          <!-- Joiners animations zoom in -->
+          <animate href="#joiners-circle" attributeName="width" from="100" to="100" dur="0.1s" begin="click" id="joinersCircleAnim" fill="freeze" />
+          <animate href="#joiners-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="joinersTitleAnim" />
+          <animate href="#joiners-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1s; joinersTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#joiners-text-link3" class="start-animation" attributeName="y" from="125" to="95" dur="0.5s" begin="joinersCircleAnim.begin + 1s; joinersTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#joiners-text-link3" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1s; joinersTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#joiners-text-link2" attributeName="y" from="95" to="65" dur="0.5s" begin="joinersCircleAnim.begin + 1.4s; joinersTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#joiners-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1.4s; joinersTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#joiners-text-link1" attributeName="y" from="65" to="35" dur="0.5s" begin="joinersCircleAnim.begin + 1.8s; joinersTitleAnim.begin + 1.8s" fill="freeze" />
+          <animate href="#joiners-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="joinersCircleAnim.begin + 1.8s; joinersTitleAnim.begin + 1.8s" fill="freeze" />
+          <!-- Automate animations zoom in -->
+          <animate href="#automate-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="automateCircleAnim.begin + 1s; automateTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#automate-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="automateCircleAnim" />
+          <animate href="#automate-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="automateTitleAnim" />
+          <animate href="#automate-text-link1" class="start-animation" attributeName="y" from="455" to="485" dur="0.5s" begin="automateCircleAnim.begin + 1s; automateTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#automate-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="automateCircleAnim.begin + 1s; automateTitleAnim.begin + 1s" fill="freeze" />
+          <!-- Migrate animations zoom in -->
+          <animate href="#migrate-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1s; migrateTitleAnim.begin + 1s" fill="freeze" data-display="hidden" />
+          <animate href="#migrate-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="migrateCircleAnim" />
+          <animate href="#migrate-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="migrateTitleAnim" />
+          <animate href="#migrate-text-link1" class="start-animation" attributeName="y" from="100" to="130" dur="0.5s" begin="migrateCircleAnim.begin + 1s; migrateTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#migrate-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1s; migrateTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#migrate-text-link2" attributeName="y" from="130" to="160" dur="0.5s" begin="migrateCircleAnim.begin + 1.4s; migrateTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#migrate-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1.4s; migrateTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#migrate-text-link3" attributeName="y" from="160" to="190" dur="0.5s" begin="migrateCircleAnim.begin + 1.8s; migrateTitleAnim.begin + 1.8s" fill="freeze" />
+          <animate href="#migrate-text-link3" attributeName="opacity" from="0" to="1" dur="0.5s" begin="migrateCircleAnim.begin + 1.8s; migrateTitleAnim.begin + 1.8s" fill="freeze" />
+          <!-- Starters animations zoom in -->
+          <animate href="#starters-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1s; startersTitleAnim.begin + 1s" fill="freeze" data-display="hidden" />
+          <animate href="#starters-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="startersCircleAnim" />
+          <animate href="#starters-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="startersTitleAnim" />
+          <animate href="#starters-text-link1" class="start-animation" attributeName="y" from="290" to="320" dur="0.5s" begin="startersCircleAnim.begin + 1s; startersTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#starters-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1s; startersTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#starters-text-link2" attributeName="y" from="320" to="350" dur="0.5s" begin="startersCircleAnim.begin + 1.4s; startersTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#starters-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1.4s; startersTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#starters-text-link3" attributeName="y" from="350" to="380" dur="0.5s" begin="startersCircleAnim.begin + 1.8s; startersTitleAnim.begin + 1.8s" fill="freeze" />
+          <animate href="#starters-text-link3" attributeName="opacity" from="0" to="1" dur="0.5s" begin="startersCircleAnim.begin + 1.8s; startersTitleAnim.begin + 1.8s" fill="freeze" />
+          <!-- Leavers animations zoom in -->
+          <animate href="#leavers-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1s; leaversTitleAnim.begin + 1s" fill="freeze" data-display="hidden" />
+          <animate href="#leavers-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="leaversCircleAnim" />
+          <animate href="#leavers-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="leaversTitleAnim" />
+          <animate href="#leavers-text-link1" class="start-animation" attributeName="y" from="620" to="650" dur="0.5s" begin="leaversCircleAnim.begin + 1s; leaversTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#leavers-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1s; leaversTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#leavers-text-link2" attributeName="y" from="650" to="680" dur="0.5s" begin="leaversCircleAnim.begin + 1.4s; leaversTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#leavers-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="leaversCircleAnim.begin + 1.4s; leaversTitleAnim.begin + 1.4s" fill="freeze" />
+          <!-- Archive animations zoom in -->
+          <animate href="#archive-back-button" attributeName="opacity" from="0" to="1" dur="0.5s" begin="archiveCircleAnim.begin + 1s; archiveTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#archive-circle" attributeName="height" from="" to="" dur="0.1s" begin="click" id="archiveCircleAnim" />
+          <animate href="#archive-title" attributeName="height" from="" to="" dur="0.1s" begin="click" id="archiveTitleAnim" />
+          <animate href="#archive-text-link1" class="start-animation" attributeName="y" from="810" to="840" dur="0.5s" begin="archiveCircleAnim.begin + 1s; archiveTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#archive-text-link1" attributeName="opacity" from="0" to="1" dur="0.5s" begin="archiveCircleAnim.begin + 1s; archiveTitleAnim.begin + 1s" fill="freeze" />
+          <animate href="#archive-text-link2" attributeName="y" from="840" to="870" dur="0.5s" begin="archiveCircleAnim.begin + 1.4s; archiveTitleAnim.begin + 1.4s" fill="freeze" />
+          <animate href="#archive-text-link2" attributeName="opacity" from="0" to="1" dur="0.5s" begin="archiveCircleAnim.begin + 1.4s; archiveTitleAnim.begin + 1.4s" fill="freeze" />
+          <!-- ** Animations for zooming out. ** -->
+          <!-- Movers animations zoom out -->
+          <animate href="#movers-back-button" id="moversZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
+          <animate href="#movers-text-link1" attributeName="y" from="485" to="465" dur="0.5s" begin="moversZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#movers-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="moversZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <!-- Joiners animations zoom out -->
+          <animate href="#joiners-back-button" id="joinersZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
+          <animate href="#joiners-text-link1" attributeName="y" from="35" to="65" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#joiners-text-link1" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#joiners-text-link2" attributeName="y" from="65" to="95" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#joiners-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#joiners-text-link3" attributeName="y" from="95" to="125" dur="0.5s" begin="joinersZoomOutAnim.begin + 1.3s" fill="freeze" />
+          <animate href="#joiners-text-link3" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="joinersZoomOutAnim.begin + 1.3s" fill="freeze" />
+          <!-- Automate animations zoom out -->
+          <animate href="#automate-back-button" id="automateZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
+          <animate href="#automate-text-link1" attributeName="y" from="485" to="455" dur="0.5s" begin="automateZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#automate-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="automateZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <!-- Migrate animations zoom out -->
+          <animate href="#migrate-back-button" id="migrateZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
+          <animate href="#migrate-text-link3" attributeName="y" from="190" to="160" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#migrate-text-link3" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#migrate-text-link2" attributeName="y" from="160" to="130" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#migrate-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#migrate-text-link1" attributeName="y" from="130" to="100" dur="0.5s" begin="migrateZoomOutAnim.begin + 1.3s" fill="freeze" />
+          <animate href="#migrate-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="migrateZoomOutAnim.begin + 1.3s" fill="freeze" />
+          <!-- Starters animations zoom out -->
+          <animate href="#starters-back-button" id="startersZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
+          <animate href="#starters-text-link3" attributeName="y" from="380" to="350" dur="0.5s" begin="startersZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#starters-text-link3" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#starters-text-link2" attributeName="y" from="350" to="320" dur="0.5s" begin="startersZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#starters-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#starters-text-link1" attributeName="y" from="320" to="290" dur="0.5s" begin="startersZoomOutAnim.begin + 1.3s" fill="freeze" />
+          <animate href="#starters-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="startersZoomOutAnim.begin + 1.3s" fill="freeze" />
+          <!-- Leavers animations zoom out -->
+          <animate href="#leavers-back-button" id="leaversZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
+          <animate href="#leavers-text-link2" attributeName="y" from="680" to="650" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#leavers-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#leavers-text-link1" attributeName="y" from="650" to="620" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#leavers-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="leaversZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <!-- Archive animations zoom out -->
+          <animate href="#archive-back-button" id="archiveZoomOutAnim" attributeName="opacity" from="1" to="0" dur="0.5s" begin="click" fill="freeze" />
+          <animate href="#archive-text-link2" attributeName="y" from="870" to="840" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#archive-text-link2" attributeName="opacity" from="1" to="0" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.5s" fill="freeze" />
+          <animate href="#archive-text-link1" attributeName="y" from="840" to="810" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.9s" fill="freeze" />
+          <animate href="#archive-text-link1" class="end-animation" attributeName="opacity" from="1" to="0" dur="0.5s" begin="archiveZoomOutAnim.begin + 0.9s" fill="freeze" />
+        </g>     
+      </svg>
+    </div>
+    <script>
+      // window.onload = (event) => {
+      //     document.getElementById('joiners-circle').onclick = function useFocusPulse() {
+      //         document.getElementById('joiners-pulse-unfocused').classList.add('hidden')
+      //         document.getElementById('migrate-pulse-unfocused').classList.add('hidden')
+      //         document.getElementById('starters-pulse-unfocused').classList.add('hidden')
+      //         setTimeout(function () {
+      //             document.getElementById('joiners-pulse-focused').classList.add('unhide')
+      //             document.getElementById('migrate-pulse-focused').classList.add('unhide')
+      //             document.getElementById('starters-pulse-focused').classList.add('unhide')
+      //         }, 750)
+      //     }
+      // }
+    </script>
+  </body>
 </html>
-
