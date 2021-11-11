@@ -35,10 +35,6 @@ const archiveLink2 = 'www.facebook.com'
 const targetBehaviour = '_blank'
 
 // Create array of link ID's
-// const linkIds = ['google-link', 'microsoft365-link', 'inner-circle-text-link', 'joiners-link-1', 'joiners-link-2','joiners-link-3','movers-link-1','automate-link-1','migrate-circle-link',
-// 'migrate-link-1','migrate-link-2','migrate-link-3','starters-circle-link','starters-link-1','starters-link-2','starters-link-3','leavers-circle-link','leavers-link-1','leavers-link-2',
-// 'archive-circle-link','archive-link-1','archive-link-2']
-
 const linkIds = {
 	'google-link': googleLink,
 	'microsoft365-link': microsoft365Link,
