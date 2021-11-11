@@ -1,9 +1,12 @@
 /* Links */
 // Inner Circle
 const googleLink = 'https://www.google.com'
-const microsoft365Link = ''
-const innerCircleTextLink = ''
+const microsoft365Link = 'https://www.microsoft.com'
+const innerCircleTextLink = 'https://www.youtube.com/watch?v=v5BIPQCdMvo'
 // Outer Circle
+const moversCircleLink = ''
+const joinersCircleLink = ''
+const automateCircleLink = ''
 const joinersLink1 = '' // refers to link at the top.
 const joinersLink2 = ''
 const joinersLink3 = ''
@@ -24,7 +27,7 @@ const leaversLink1 = '' // refers to link at the top.
 const leaversLink2 = ''
 const archiveCircleLink = ''
 const archiveLink1 = '' // refers to link at the top.
-const archiveLink2 = 'www.facebook.com'
+const archiveLink2 = ''
 // Change this to either "_blank" or "_self" to open links in a new tab or the current one respectively.
 const targetBehaviour = '_blank'
 // Create array of link ID's
@@ -32,25 +35,35 @@ const linkIds = {
 	'google-link': googleLink,
 	'microsoft365-link': microsoft365Link,
 	'inner-circle-text-link': innerCircleTextLink,
-	'joiners-text-link1': joinersLink1,
-	'joiners-text-link2': joinersLink2,
-	'joiners-text-link3': joinersLink3,
-	'movers-text-link1': moversLink1,
-	'automate-text-link1': automateLink1,
+	'joiners-circle-link': joinersCircleLink,
+	'joiners-title-link': joinersCircleLink,
+	'joiners-link-1': joinersLink1,
+	'joiners-link-2': joinersLink2,
+	'joiners-link-3': joinersLink3,
+	'movers-circle-link': moversCircleLink,
+	'movers-title-link': moversCircleLink,
+	'movers-link-1': moversLink1,
+	'automate-circle-link': automateCircleLink,
+	'automate-title-link': automateCircleLink,
+	'automate-link-1': automateLink1,
 	'migrate-circle-link': migrateCircleLink,
-	'migrate-text-link1': migrateLink1,
-	'migrate-text-link2': migrateLink2,
-	'migrate-text-link3': migrateLink3,
+	'migrate-title-link': migrateCircleLink,
+	'migrate-link-1': migrateLink1,
+	'migrate-link-2': migrateLink2,
+	'migrate-link-3': migrateLink3,
 	'starters-circle-link': startersCircleLink,
-	'starters-text-link1': startersLink1,
-	'starters-text-link2': startersLink2,
-	'starters-text-link3': startersLink3,
+	'starters-title-link': startersCircleLink,
+	'starters-link-1': startersLink1,
+	'starters-link-2': startersLink2,
+	'starters-link-3': startersLink3,
 	'leavers-circle-link': leaversCircleLink,
-	'leavers-text-link1': leaversLink1,
-	'leavers-text-link2': leaversLink2,
+	'leavers-title-link': leaversCircleLink,
+	'leavers-link-1': leaversLink1,
+	'leavers-link-2': leaversLink2,
 	'archive-circle-link': archiveCircleLink,
-	'archive-text-link1': archiveLink1,
-	'archive-text-link2': archiveLink2
+	'archive-title-link': archiveCircleLink,
+	'archive-link-1': archiveLink1,
+	'archive-link-2': archiveLink2
 }
 window.onload = () => {
 	var zoomElements = Array.from(document.getElementsByClassName('zoom-anchor'))
@@ -60,6 +73,7 @@ window.onload = () => {
 	var pulseElements = Array.from(document.getElementsByClassName('pulse'))
 	var endAnimationElements = Array.from(document.getElementsByClassName('end-animation'))
 	var firstTextLinksAnimations = Array.from(document.getElementsByClassName('start-animation'))
+  // Create an Observer so when the SVG is 20% on screen the draw animations run.
 	createObserver()
 	// Load in the links once all resources on page have loaded.
 	for (var key in linkIds) {
