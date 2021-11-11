@@ -4,14 +4,13 @@
     <title>Cloud M - SVG Animation Widget</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <script src="../javascript/scripts.js"></script>
+    <link rel="stylesheet" href="../styles/styles.min.css" />
+    <script src="../javascript/scripts.min.js"></script>
   </head>
   <body style="height: 100vh">
     <div style="overflow: hidden; width: 100%; height: 300%;">
-      <svg id="animation-widget" class="svg-container" style="border: 2px solid black;" version="1.1" viewBox="0, 0, 1500, 900" xmlns="http://www.w3.org/2000/svg">
+      <svg id="animation-widget" class="svg-container" version="1.1" viewBox="0, 0, 1500, 900" xmlns="http://www.w3.org/2000/svg">
         <circle id="outer-circle" cx="1000" cy="450" r="262.5" fill="var(--color-white)" stroke="var(--color-outer-circle-stroke)" stroke-width="12" />
-
         <!-- ** Circles for drawing out the branches. ** -->
         <!-- Top branch, middle. -->
         <g>
@@ -505,7 +504,6 @@
           <animate dur="0.08s" attributeName="opacity" from="0" to="1" href="#bottom-branch-lower-23-circle" fill="freeze" begin="bottomBranchLowerCircleAnim23.begin" />
           <animate dur="0.08s" attributeName="opacity" from="0" to="1" href="#bottom-branch-lower-24-circle" fill="freeze" begin="bottomBranchLowerCircleEndAnim.begin" />
         </g>
-
         <!-- ** Scaling / Opacity element animations ** -->
         <!-- Top branch -->
         <!-- Joiners arrow -->
@@ -629,7 +627,6 @@
           <animate dur="0.3s" attributeName="opacity" from="0" to="1" href="#archive-title" fill="freeze" begin="archiveCircleAnimEnd.end" />
           <animate dur="0.3s" attributeName="x" from="275" to="250" href="#archive-title" fill="freeze" begin="archiveCircleAnimEnd.end" />
         </g>
-
         <!-- Joiners branch -->
         <g>
           <!-- <image class="filter-joiners-branch" x="350" y="90" href="../assets/SVG/dotted-branch-left.svg" width="600" /> -->
@@ -663,13 +660,11 @@
               <text id="migrate-text-link3" x="250" y="190" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Domain Consolidation</text>
             </a>
           </g>
-
           <circle id="starters-pulse-unfocused" class="opacity-none" cx="315" cy="282" fill="var(--color-starters-pulse)" r="0" stroke="var(--color-starters-pulse)" stroke-width="2">
             <animate attributeName="opacity" class="pulse" from="0" to="1" dur="0.1s" begin="startersCircleIntoView.end" fill="freeze" />
             <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="startersCircleIntoView.end + 0.9s" repeatCount="indefinite" id="startersAnim" />
             <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="startersCircleIntoView.end + 0.9s" repeatCount="indefinite" />
           </circle>
-
           <g id="starters-group">
             <circle id="starters-circle-bg" cx="315" cy="282" class="circle-background opacity-none" r="50"></circle>
             <a id="starters-circle-link" href="/">
@@ -696,13 +691,11 @@
           <image id="grey-leaving-arrow-left" x="750" y="687" class="clickable filter-grey-leaving-arrow section opacity-none" href="../assets/SVG/grey-leaving-arrow-left.svg" width="45" height="45" data-section="grey-leaving" />
           <image id="leavers-arrow-left" x="430" y="591" class="clickable filter-leavers-arrow section opacity-none" href="../assets/SVG/leavers-arrow-left.svg" width="45" height="45" data-section="leavers" />
           <image id="archive-arrow-left" x="430" y="782" class="clickable filter-archive-arrow section opacity-none" href="../assets/SVG/archive-arrow-left.svg" width="45" height="45" data-section="archive" />
-
           <circle cx="315" cy="613" fill="var(--color-leavers-pulse)" class="opacity-none" r="0" stroke="var(--color-leavers-pulse)" stroke-width="2">
             <animate attributeName="opacity" class="pulse" from="0" to="1" dur="0.1s" begin="leaversCircleIntoView.end" fill="freeze" />
             <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="leaversCircleIntoView.end + 1.7s" repeatCount="indefinite" />
             <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="leaversCircleIntoView.end + 1.7s" repeatCount="indefinite" />
           </circle>
-
           <g id="leavers-group">
             <circle id="leavers-circle-bg" cx="315" cy="613" class="circle-background opacity-none" r="50"></circle>
             <a id="leavers-circle-link" href="/">
@@ -719,13 +712,11 @@
               <text id="leavers-text-link2" x="250" y="680" class="text-link clickable" fill="var(--color-leavers-link)" text-anchor="end" data-display="hidden">Migrate Emails</text>
             </a>
           </g>
-
           <circle cx="315" cy="803" fill="var(--color-archive-pulse)" class="opacity-none" r="0" stroke="var(--color-archive-pulse)" stroke-width="2">
             <animate attributeName="opacity" class="pulse" from="0" to="1" dur="0.1s" begin="archiveCircleIntoView.end" fill="freeze" />
             <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="archiveCircleIntoView.end + 2.1s" repeatCount="indefinite" />
             <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="archiveCircleIntoView.end + 2.1s" repeatCount="indefinite" />
           </circle>
-
           <g id="archive-group">
             <circle id="archive-circle-bg" cx="315" cy="803" class="circle-background opacity-none" r="50"></circle>
             <a id="archive-circle-link" href="/">
@@ -919,19 +910,5 @@
         </g>     
       </svg>
     </div>
-    <script>
-      // window.onload = (event) => {
-      //     document.getElementById('joiners-circle').onclick = function useFocusPulse() {
-      //         document.getElementById('joiners-pulse-unfocused').classList.add('hidden')
-      //         document.getElementById('migrate-pulse-unfocused').classList.add('hidden')
-      //         document.getElementById('starters-pulse-unfocused').classList.add('hidden')
-      //         setTimeout(function () {
-      //             document.getElementById('joiners-pulse-focused').classList.add('unhide')
-      //             document.getElementById('migrate-pulse-focused').classList.add('unhide')
-      //             document.getElementById('starters-pulse-focused').classList.add('unhide')
-      //         }, 750)
-      //     }
-      // }
-    </script>
   </body>
 </html>

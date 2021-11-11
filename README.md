@@ -14,7 +14,7 @@ filter, create it as a @mixin under the "Filter Mixins" section of the styles.sc
 
 Filtes are applicable only to classes under the Filters section in the styles.scss file, all have the "filter-" class prefix except for the back-buttons.
 
-<img src="assets/readme-images/filter-code-css.JPG" />
+<img src="assets/readme-images/filter-code.JPG" />
 <img src="assets/readme-images/applying-filters.JPG" />
 
 ## Creating filters from hex codes using the filter widget
@@ -35,3 +35,6 @@ Links are applied to the SVG only after the whole page has loaded, these are sto
 You can change the target behaviour of all links to either open in the current tab or a new tab by modifying the "targetBehaviour" variable in the scripts.js file. 
 
 <img src="assets/readme-images/target-behaviour.JPG" />
+
+## Minified
+The SVG is looking for the minified versions of styles.css / scripts.js so just make sure you're minifying them after save.
