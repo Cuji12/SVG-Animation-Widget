@@ -219,9 +219,7 @@
 }
 .branch-circle {
     fill: #939393;
-    &:not(.branch-first-circle) {
-        opacity: 0;
-    }
+    opacity: 0;
 }
 .opacity-none {
     opacity: 0;

@@ -174,9 +174,6 @@
 
 .branch-circle {
   fill: #939393;
-}
-
-.branch-circle:not(.branch-first-circle) {
   opacity: 0;
 }
 
