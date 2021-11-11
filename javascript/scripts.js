@@ -73,11 +73,14 @@ window.onload = () => {
 	var endAnimationElements = Array.from(document.getElementsByClassName('end-animation'))
 	var firstTextLinksAnimations = Array.from(document.getElementsByClassName('start-animation'))
 
+	createObserver()
+
 	// Load in the links once all resources on page have loaded.
 	for (var key in linkIds) {
 		document.getElementById(key).setAttribute('href', linkIds[key])
 		document.getElementById(key).setAttribute('target', targetBehaviour)
 	}
+
 
 	/* Event functions */
 	function zoomIn() {
@@ -168,7 +171,29 @@ window.onload = () => {
 		for (var i = 0; i < sections.length; i++) {
 			sections[i].setAttribute('data-disabled', false)
 		}
+	}
 
+	function createObserver() {
+		let observer
+
+		let options = {
+			root: null,
+			rootMargin: "0px",
+			threshold: [0.3]
+		  };
+		
+		  observer = new IntersectionObserver(beginDrawAnimation, options);
+		  observer.observe(svgContainer);
+	}
+
+	function beginDrawAnimation(entries, observer) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				document.getElementById('topBranchStartAnim').beginElement()
+				document.getElementById('bottomBranchStartAnim').beginElement()
+				observer.unobserve(entry.target)
+			}
+		})
 	}
 
 	/* Adding event listeners */

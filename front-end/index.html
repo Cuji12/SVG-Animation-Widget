@@ -8,14 +8,14 @@
     <script src="../javascript/scripts.js"></script>
   </head>
   <body style="height: 100vh">
-    <div style="overflow: hidden; width: 100%; height: 200%;">
-      <svg id="animation-widget" class="svg-container" style="border: 2px solid black; transform: translateY(100%)" version="1.1" viewBox="0, 0, 1500, 900" xmlns="http://www.w3.org/2000/svg">
+    <div style="overflow: hidden; width: 100%; height: 300%;">
+      <svg id="animation-widget" class="svg-container" style="border: 2px solid black; transform: translateY(150%)" version="1.1" viewBox="0, 0, 1500, 900" xmlns="http://www.w3.org/2000/svg">
         <circle id="outer-circle" cx="1000" cy="450" r="262.5" fill="var(--color-white)" stroke="var(--color-outer-circle-stroke)" stroke-width="12" />
 
         <!-- ** Circles for drawing out the branches. ** -->
         <!-- Top branch, middle. -->
         <g>
-          <circle id="top-branch-stationary-circle" class="branch-circle" cx="945" cy="188" r="4.5"/>
+          <circle id="top-branch-stationary-circle" class="branch-circle" cx="945" cy="188" r="4.5" />
           <circle id="top-branch-middle-start-circle" class="branch-circle" cx="945" cy="188" r="4.5"/>
           <circle id="top-branch-middle-1-circle" class="branch-circle" cx="931" cy="188" r="4.5"/>
           <circle id="top-branch-middle-2-circle" class="branch-circle" cx="917" cy="188" r="4.5"/>
@@ -182,7 +182,7 @@
         <!-- ** Drawing Animations ** -->
         <!-- Top branch, middle - motion animations. -->
         <g>
-          <animateMotion id="topBranchStartAnim" dur="0.08s" href="#top-branch-middle-start-circle" fill="freeze" path="M0, 0 L -14 0" begin="0" />
+          <animateMotion id="topBranchStartAnim" dur="0.08s" href="#top-branch-middle-start-circle" fill="freeze" path="M0, 0 L -14 0" begin=""/>
           <animateMotion id="topBranchMiddleCircleAnim1" dur="0.08s" href="#top-branch-middle-1-circle" fill="freeze" begin="topBranchStartAnim.end" path="M0, 0 L -14 0" />
           <animateMotion id="topBranchMiddleCircleAnim2" dur="0.08s" href="#top-branch-middle-2-circle" fill="freeze" begin="topBranchMiddleCircleAnim1.end" path="M0, 0 L -14 0" />
           <animateMotion id="topBranchMiddleCircleAnim3" dur="0.08s" href="#top-branch-middle-3-circle" fill="freeze" begin="topBranchMiddleCircleAnim2.end" path="M0, 0 L -14 0" />
@@ -345,7 +345,7 @@
         </g>
          <!-- Bottom branch, middle - motion animations. -->
          <g>
-          <animateMotion id="bottomBranchStartAnim" dur="0.08s" href="#bottom-branch-middle-start-circle" fill="freeze" path="M0, 0 L -14 0" begin="0" />
+          <animateMotion id="bottomBranchStartAnim" dur="0.08s" href="#bottom-branch-middle-start-circle" fill="freeze" path="M0, 0 L -14 0" begin="" />
           <animateMotion id="bottomBranchMiddleCircleAnim1" dur="0.08s" href="#bottom-branch-middle-1-circle" fill="freeze" begin="bottomBranchStartAnim.end" path="M0, 0 L -14 0" />
           <animateMotion id="bottomBranchMiddleCircleAnim2" dur="0.08s" href="#bottom-branch-middle-2-circle" fill="freeze" begin="bottomBranchMiddleCircleAnim1.end" path="M0, 0 L -14 0" />
           <animateMotion id="bottomBranchMiddleCircleAnim3" dur="0.08s" href="#bottom-branch-middle-3-circle" fill="freeze" begin="bottomBranchMiddleCircleAnim2.end" path="M0, 0 L -14 0" />
@@ -539,7 +539,7 @@
         </g>
         <!-- Migrate circle -->
         <g>
-          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-circle" fill="freeze" begin="topBranchUpperCirclesEndAnim.begin" />
+          <animate id="migrateCircleIntoView" dur="0.4s" attributeName="opacity" from="0" to="1" href="#migrate-circle" fill="freeze" begin="topBranchUpperCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="height" from="15" to="100" href="#migrate-circle" fill="freeze" begin="topBranchUpperCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="width" from="15" to="100" href="#migrate-circle" fill="freeze" begin="topBranchUpperCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="x" from="305" to="265" href="#migrate-circle" fill="freeze" begin="topBranchUpperCirclesEndAnim.begin" />
@@ -557,7 +557,7 @@
         </g>
         <!-- Starters circle -->
         <g>
-          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#starters-circle" fill="freeze" begin="topBranchLowerCirclesEndAnim.begin" />
+          <animate id="startersCircleIntoView" dur="0.4s" attributeName="opacity" from="0" to="1" href="#starters-circle" fill="freeze" begin="topBranchLowerCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="height" from="15" to="100" href="#starters-circle" fill="freeze" begin="topBranchLowerCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="width" from="15" to="100" href="#starters-circle" fill="freeze" begin="topBranchLowerCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="x" from="305" to="265" href="#starters-circle" fill="freeze" begin="topBranchLowerCirclesEndAnim.begin" />
@@ -600,7 +600,7 @@
         </g>
         <!-- Leavers circle -->
         <g>
-          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#leavers-circle" fill="freeze" begin="bottomBranchUpperCirclesEndAnim.begin" />
+          <animate id="leaversCircleIntoView" dur="0.4s" attributeName="opacity" from="0" to="1" href="#leavers-circle" fill="freeze" begin="bottomBranchUpperCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="height" from="15" to="100" href="#leavers-circle" fill="freeze" begin="bottomBranchUpperCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="width" from="15" to="100" href="#leavers-circle" fill="freeze" begin="bottomBranchUpperCirclesEndAnim.begin" />
           <animate dur="0.4s" attributeName="x" from="305" to="265" href="#leavers-circle" fill="freeze" begin="bottomBranchUpperCirclesEndAnim.begin" />
@@ -618,7 +618,7 @@
         </g>
         <!-- Archive circle -->
         <g>
-          <animate dur="0.4s" attributeName="opacity" from="0" to="1" href="#archive-circle" fill="freeze" begin="bottomBranchLowerCircleEndAnim.begin" />
+          <animate id="archiveCircleIntoView" dur="0.4s" attributeName="opacity" from="0" to="1" href="#archive-circle" fill="freeze" begin="bottomBranchLowerCircleEndAnim.begin" />
           <animate dur="0.4s" attributeName="height" from="15" to="100" href="#archive-circle" fill="freeze" begin="bottomBranchLowerCircleEndAnim.begin" />
           <animate dur="0.4s" attributeName="width" from="15" to="100" href="#archive-circle" fill="freeze" begin="bottomBranchLowerCircleEndAnim.begin" />
           <animate dur="0.4s" attributeName="x" from="305" to="265" href="#archive-circle" fill="freeze" begin="bottomBranchLowerCircleEndAnim.begin" />
@@ -638,10 +638,11 @@
           <image id="starters-arrow-right" class="filter-starters-arrow section opacity-none" x="430" y="262" href="../assets/SVG/starters-arrow-right.svg" width="45" height="45" data-section="starters" />
 
           <!-- Peg the begin to the animation for when the circle is finished -->
-          <!-- <circle id="migrate-pulse-unfocused" cx="315" cy="90" fill="var(--color-migrate-pulse)" r="0" stroke="var(--color-migrate-pulse)" stroke-width="2" fill="white">
-            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite" /> 
-            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite" />
-          </circle> -->
+          <circle id="migrate-pulse-unfocused" class="opacity-none" cx="315" cy="90" fill="var(--color-migrate-pulse)" r="0" stroke="var(--color-migrate-pulse)" stroke-width="2" fill="white">
+            <animate attributeName="opacity" class="pulse" from="0" to="1" dur="0.1s" begin="migrateCircleIntoView.end" fill="freeze" />
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="migrateCircleIntoView.end + 0.9s" repeatCount="indefinite" /> 
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="migrateCircleIntoView.end + 0.9s" repeatCount="indefinite" />
+          </circle>
 
           <g id="migrate-group">
             <circle id="migrate-circle-bg" cx="315" cy="90" class="circle-background opacity-none" r="50"></circle>
@@ -662,10 +663,13 @@
               <text id="migrate-text-link3" x="250" y="190" class="text-link clickable" fill="var(--color-migrate-link)" text-anchor="end" data-display="hidden">Domain Consolidation</text>
             </a>
           </g>
-          <!-- <circle id="starters-pulse-unfocused" cx="315" cy="282" fill="var(--color-starters-pulse)" r="0" stroke="var(--color-starters-pulse)" stroke-width="2">
-            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="0.9s" repeatCount="indefinite" id="startersAnim" />
-            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="0.9s" repeatCount="indefinite" />
-          </circle> -->
+
+          <circle id="starters-pulse-unfocused" class="opacity-none" cx="315" cy="282" fill="var(--color-starters-pulse)" r="0" stroke="var(--color-starters-pulse)" stroke-width="2">
+            <animate attributeName="opacity" class="pulse" from="0" to="1" dur="0.1s" begin="startersCircleIntoView.end" fill="freeze" />
+            <animate attributeName="r" class="pulse" from="20" to="70" dur="2.5s" begin="startersCircleIntoView + 0.9s" repeatCount="indefinite" id="startersAnim" />
+            <animate attributeName="opacity" class="pulse" from="1" to="0" dur="2.5s" begin="startersCircleIntoView + 0.9s" repeatCount="indefinite" />
+          </circle>
+
           <g id="starters-group">
             <circle id="starters-circle-bg" cx="315" cy="282" class="circle-background opacity-none" r="50"></circle>
             <a id="starters-circle-link" href="/">
