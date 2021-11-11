@@ -1,6 +1,10 @@
 # CloudM-SVG-Animation-Widget
 A widget utilizing SVG animations designed to be easily configurable for manipulating text, image colours and more. 
 
+## Implementation
+The project comes ready to run in the browser rather than being immediately able to copy and paste the SVG into your website. Ensure you're pulling in the Styles and JavaScript in your website before
+placing the SVG in there. The only code you need from index.html is everything contained within the SVG element.
+
 ## Configuring colours
 Modifying colours for elements that aren't images is done through the colours under :root in the CSS, the styles within that correspond to the elements. Just change the hex codes
 to modify the colours they're applying on the front-end.

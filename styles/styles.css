@@ -139,13 +139,11 @@
   text-decoration-thickness: 2px;
 }
 
-#animation-widget text[data-display="hidden"],
-#animation-widget image[data-display="hidden"] {
+#animation-widget text[data-display="hidden"], #animation-widget image[data-display="hidden"] {
   display: none;
 }
 
-#animation-widget text[data-display="unhide"],
-#animation-widget image[data-display="unhide"] {
+#animation-widget text[data-display="unhide"], #animation-widget image[data-display="unhide"] {
   display: block;
 }
 
