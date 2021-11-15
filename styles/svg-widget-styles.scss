@@ -1,8 +1,8 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
-
 /* Fills, these are used for everything other than images. */
+
 :root {
   /* Base colours */
   --color-white: #FFFFFF;
@@ -30,151 +30,160 @@
   --color-leavers-pulse: #E30817;
   --color-archive-pulse: #555555;
 }
-
 /* Filter Mixins */
-/* Filters, these are used only for images. */
-.outer-circle-back-button {
+
+@mixin orange-ED730D {
   -webkit-filter: invert(50%) sepia(68%) saturate(1424%) hue-rotate(353deg) brightness(93%) contrast(100%);
   filter: invert(50%) sepia(68%) saturate(1424%) hue-rotate(353deg) brightness(93%) contrast(100%);
 }
-
-.migrate-back-button {
+@mixin blue-128CF2 {
   -webkit-filter: invert(40%) sepia(66%) saturate(1425%) hue-rotate(183deg) brightness(97%) contrast(96%);
   filter: invert(40%) sepia(66%) saturate(1425%) hue-rotate(183deg) brightness(97%) contrast(96%);
 }
-
-.starters-back-button {
+@mixin yellow-FABD14 {
   -webkit-filter: invert(84%) sepia(9%) saturate(6164%) hue-rotate(348deg) brightness(101%) contrast(96%);
   filter: invert(84%) sepia(9%) saturate(6164%) hue-rotate(348deg) brightness(101%) contrast(96%);
 }
-
-.leavers-back-button {
+@mixin red-E30817 {
   -webkit-filter: invert(11%) sepia(96%) saturate(6802%) hue-rotate(353deg) brightness(90%) contrast(98%);
   filter: invert(11%) sepia(96%) saturate(6802%) hue-rotate(353deg) brightness(90%) contrast(98%);
 }
-
-.archive-back-button {
+@mixin grey-555555 {
   -webkit-filter: invert(29%) sepia(4%) saturate(15%) hue-rotate(327deg) brightness(103%) contrast(83%);
   filter: invert(29%) sepia(4%) saturate(15%) hue-rotate(327deg) brightness(103%) contrast(83%);
 }
+/* Filters, these are used only for images. */
 
+// Back buttons
+.outer-circle-back-button {
+  @include orange-ED730D;
+}
+.migrate-back-button {
+  @include blue-128CF2;
+}
+.starters-back-button {
+  @include yellow-FABD14;
+}
+.leavers-back-button {
+  @include red-E30817;
+}
+.archive-back-button {
+  @include grey-555555;
+}
+// Inner circle
+.filter-google-logo {}
+.filter-inner-circle-arrow {}
+.filter-microsoft365-logo {}
+// Outer circle
+.filter-joiners-circle {}
+.filter-movers-circle {}
+.filter-automate-circle {}
+// Joiners branch
+.filter-joiners-branch {}
+.filter-joiners-arrow {}
+.filter-migrate-arrow {}
+.filter-starters-arrow {}
+.filter-migrate-circle {}
+.filter-starters-circle {}
+// Movers branch
+.filter-movers-branch {}
+.filter-grey-leaving-arrow {}
+.filter-leavers-arrow {}
+.filter-archive-arrow {}
+.filter-leavers-circle {}
+.filter-archive-circle {}
 .migrate-zoom {
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+  transform-origin: 0 0;
 }
-
 .starters-zoom {
-  -webkit-transform-origin: 0 13%;
-          transform-origin: 0 13%;
+  transform-origin: 0 13%;
 }
-
 .leavers-zoom {
-  -webkit-transform-origin: 0 75%;
-          transform-origin: 0 75%;
+  transform-origin: 0 75%;
 }
-
 .archive-zoom {
-  -webkit-transform-origin: 0 100%;
-          transform-origin: 0 100%;
+  transform-origin: 0 100%;
 }
-
 .movers-zoom {
-  -webkit-transform-origin: 40% 50%;
-          transform-origin: 40% 50%;
+  transform-origin: 40% 50%;
 }
-
 .joiners-zoom {
-  -webkit-transform-origin: 63% 0%;
-          transform-origin: 63% 0%;
+  transform-origin: 63% 0%;
 }
-
 .automate-zoom {
-  -webkit-transform-origin: 100% 50%;
-          transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
 }
-
 #animation-widget {
   -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
   max-width: 1920px;
   max-height: 1080px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-
 #animation-widget image, text {
   -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
 }
-
 .zoom {
-  -webkit-transform: scale(2.5);
-          transform: scale(2.5);
+  transform: scale(2.5);
   transform-box: fill-box;
 }
-
 .outer-circle-title {
   text-transform: uppercase;
   font-size: 28px;
 }
-
 .clickable {
   cursor: pointer;
 }
-
-.svg-anchor .text-link {
-  font-size: 20px;
+.svg-anchor:not(#inner-circle-text-link) {
   opacity: 0;
+  .text-link {
+    font-size: 20px;
+    &:hover {
+      text-decoration: solid underline #555555 2px;
+      text-decoration-thickness: 2px;
+    }
+  }
 }
-
-.svg-anchor .text-link:hover {
-  -webkit-text-decoration: solid underline #555555 2px;
-          text-decoration: solid underline #555555 2px;
-  text-decoration-thickness: 2px;
-}
-
 .link-hover:hover {
-  -webkit-text-decoration: solid underline #555555 2px;
-          text-decoration: solid underline #555555 2px;
+  text-decoration: solid underline #555555 2px;
   text-decoration-thickness: 2px;
 }
-
-#animation-widget text[data-display="hidden"], #animation-widget image[data-display="hidden"] {
-  display: none;
+#animation-widget {
+  *[data-display="hidden"] *{
+    display: none;
+  }
+  *[data-display="unhide"] *{
+    display: block;
+  }
 }
-
-#animation-widget text[data-display="unhide"], #animation-widget image[data-display="unhide"] {
-  display: block;
-}
-
 .back-button {
-  opacity: 0;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
-
 .circle-background {
   fill: white;
 }
-
 .right-align-torigin {
-  -webkit-transform-origin: 100% 0;
-          transform-origin: 100% 0;
+  transform-origin: 100% 0;
 }
-
 #animation-widget *[data-disabled="true"] {
   pointer-events: none;
 }
-
 #animation-widget a:focus-visible, #animation-widget a:focus-within {
   outline: none;
 }
-
 .branch-circle {
   fill: #939393;
   opacity: 0;
 }
-
 .opacity-none {
   opacity: 0;
+}
+.hide {
+  display: none;
 }
