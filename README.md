@@ -1,4 +1,4 @@
-# CloudM-SVG-Animation-Widget
+SVG-Animation-Widget
 A widget utilizing SVG animations designed to be easily configurable for manipulating text, image colours and more. 
 
 ## Implementation
